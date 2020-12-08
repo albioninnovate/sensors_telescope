@@ -1,0 +1,107 @@
+2020-12-08 12:28:44,541 Using selector: EpollSelector
+2020-12-08 12:36:23,003 Using selector: EpollSelector
+2020-12-08 12:36:23,006 Server started
+2020-12-08 12:39:43,599 Server started
+2020-12-08 12:41:11,589 Server started
+2020-12-08 12:46:22,257 Server started
+2020-12-08 12:46:27,107 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<handle_echo() done, defined at server.py:17> exception=NameError("name 'DATA' is not defined")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config[DATA][characters])
+NameError: name 'DATA' is not defined
+2020-12-08 12:47:36,393 Server started
+2020-12-08 12:47:39,591 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 12:53:09,680 Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:06:15,374 Task exception was never retrieved
+future: <Task finished name='Task-8' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:06:50,793 Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:07:55,032 Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:09:14,115 Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:10:02,199 Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:11:10,909 Server started
+2020-12-08 13:13:08,404 Server started
+2020-12-08 13:13:12,273 Read sensor
+2020-12-08 14:28:53,155 Server started
+2020-12-08 14:28:56,669 Read sensor
+2020-12-08 14:58:29,736 Read sensor
+2020-12-08 14:59:45,575 Read sensor
+2020-12-08 15:00:29,653 Read sensor
+2020-12-08 15:01:27,723 Read sensor
+2020-12-08 15:02:09,886 Read sensor
+2020-12-08 15:02:33,956 Read sensor
+2020-12-08 15:02:59,738 Read sensor
+2020-12-08 15:03:15,717 Read sensor
+2020-12-08 15:25:22,788 Read sensor
+2020-12-08 15:26:12,714 Read sensor
+2020-12-08 15:26:27,505 Read sensor
+2020-12-08 15:27:05,433 Read sensor
+2020-12-08 15:27:21,550 Read sensor
+2020-12-08 15:27:56,830 Read sensor
+2020-12-08 15:28:01,138 Read sensor
+2020-12-08 15:28:11,557 Read sensor
+2020-12-08 15:28:14,218 Read sensor
+2020-12-08 15:28:17,270 Read sensor
+2020-12-08 15:28:19,597 Read sensor
+2020-12-08 15:29:41,435 Read sensor
+2020-12-08 15:34:06,751 Read sensor
+2020-12-08 15:35:38,056 Read sensor
+2020-12-08 15:35:41,488 Read sensor
+2020-12-08 15:35:45,921 Read sensor
+2020-12-08 15:37:26,356 Read sensor
+2020-12-08 15:38:29,244 Read sensor
+2020-12-08 16:18:58,824 Read sensor
+2020-12-08 17:30:06,518 Using selector: KqueueSelector
+2020-12-08 17:30:35,705 Using selector: KqueueSelector
+2020-12-08 17:32:37,776 Using selector: KqueueSelector
+2020-12-08 17:33:37,686 Using selector: KqueueSelector
+2020-12-08 17:38:38,658 Using selector: KqueueSelector
+2020-12-08 17:39:28,638 Using selector: KqueueSelector
