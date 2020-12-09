@@ -28,16 +28,18 @@ def read(sensor, verbose=True):
 
                 }
 
+
     if verbose is True:
-        print("Temperature: {} degrees C".format(sensor.temperature))
-        print("Accelerometer (m/s^2): {}".format(sensor.acceleration))
-        print("Magnetometer (microteslas): {}".format(sensor.magnetic))
-        print("Gyroscope (rad/sec): {}".format(sensor.gyro))
-        print("Euler angle: {}".format(sensor.euler))
-        print("Quaternion: {}".format(sensor.quaternion))
-        print("Linear acceleration (m/s^2): {}".format(sensor.linear_acceleration))
-        print("Gravity (m/s^2): {}".format(sensor.gravity))
-        print()
+        pprint(readings)
+#        print("Temperature: {} degrees C".format(sensor.temperature))
+#        print("Accelerometer (m/s^2): {}".format(sensor.acceleration))
+#        print("Magnetometer (microteslas): {}".format(sensor.magnetic))
+#        print("Gyroscope (rad/sec): {}".format(sensor.gyro))
+#        print("Euler angle: {}".format(sensor.euler))
+#        print("Quaternion: {}".format(sensor.quaternion))
+#        print("Linear acceleration (m/s^2): {}".format(sensor.linear_acceleration))
+#        print("Gravity (m/s^2): {}".format(sensor.gravity))
+#        print()
 
     return readings
 
@@ -45,29 +47,36 @@ def to_json(dict):
     return json.dumps(dict).encode('utf-8')
 
 
-def main(output_format='dict'):
-    sensor = start_sensor()
+def main(output_format='dict',cnt=0):
+    try:
+        sensor
+    
+    except NameError:
+        sensor = start_sensor()
 
-    imu_data = read(sensor, verbose=False)
+    while cnt <= 10:
+        imu_data = read(sensor, verbose=False)
 
-    pprint.pprint(imu_data) 
+        print('origanl sensor output')
+        pprint.pprint(imu_data) 
 
-    if output_format=='json':
-        imu_data = to_json(imu_data)
+        if output_format=='json':
+            imu_data = to_json(imu_data)
 
+        print('returned sensor output')
+        pprint.pprint(imu_data)
 
-    pprint.pprint(imu_data)
+        cnt += 1
+
+    time.sleep(1)	
     return imu_data
 
 if __name__ == '__main__':
     sensor = start_sensor()
+
     while True:
         imu_data = read(sensor, verbose=False)
-
         pprint.pprint(imu_data) 
-
         imu_data = to_json(imu_data)
-
         pprint.pprint(imu_data)
-
         time.sleep(1)
