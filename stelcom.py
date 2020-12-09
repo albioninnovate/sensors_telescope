@@ -1,7 +1,6 @@
 import requests
 import pprint
-
-# TODO
+import client
 
 def get_status(propId=-2, actionId=-2, verbose=False):
     try:
@@ -52,7 +51,13 @@ if __name__ == '__main__':
     s = get_status(propId, actionId, verbose=False)
     #pprint.pprint(s)
 
-    print('J Day :', s['time']['jday'])
+    #print('J Day :', s['time']['jday'])
 
-    send_altaz()
-    send_fov()
+    while True:
+        received = client.main()
+        #print('Euler angles : ', received['Euler angle'])
+        az = received['Euler angle'][0]
+        alt = received['Euler angle'][1]
+
+        send_altaz(az,alt)
+        send_fov()

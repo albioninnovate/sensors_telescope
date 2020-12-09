@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2020-12-09 14:05:20,428 Using selector: EpollSelector
 2020-12-09 14:05:20,430 Server started
 2020-12-09 14:06:40,098 Read sensor
@@ -24,3 +25,1206 @@
 2020-12-09 14:29:24,745 Read sensor
 2020-12-09 14:29:24,746 ('192.168.1.39', 43696)
 2020-12-09 14:29:24,772 Starting new HTTP connection (1): localhost:8090
+=======
+2020-12-08 12:28:44,541 Using selector: EpollSelector
+2020-12-08 12:36:23,003 Using selector: EpollSelector
+2020-12-08 12:36:23,006 Server started
+2020-12-08 12:39:43,599 Server started
+2020-12-08 12:41:11,589 Server started
+2020-12-08 12:46:22,257 Server started
+2020-12-08 12:46:27,107 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<handle_echo() done, defined at server.py:17> exception=NameError("name 'DATA' is not defined")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config[DATA][characters])
+NameError: name 'DATA' is not defined
+2020-12-08 12:47:36,393 Server started
+2020-12-08 12:47:39,591 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 12:53:09,680 Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:06:15,374 Task exception was never retrieved
+future: <Task finished name='Task-8' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:06:50,793 Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:07:55,032 Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:09:14,115 Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:10:02,199 Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<handle_echo() done, defined at server.py:17> exception=TypeError("'<' not supported between instances of 'str' and 'int'")>
+Traceback (most recent call last):
+  File "server.py", line 18, in handle_echo
+    data = await reader.read(config['DATA']['characters'])
+  File "/home/pi/Python-3.8.5/Lib/asyncio/streams.py", line 670, in read
+    if n < 0:
+TypeError: '<' not supported between instances of 'str' and 'int'
+2020-12-08 13:11:10,909 Server started
+2020-12-08 13:13:08,404 Server started
+2020-12-08 13:13:12,273 Read sensor
+2020-12-08 14:28:53,155 Server started
+2020-12-08 14:28:56,669 Read sensor
+2020-12-08 14:58:29,736 Read sensor
+2020-12-08 14:59:45,575 Read sensor
+2020-12-08 15:00:29,653 Read sensor
+2020-12-08 15:01:27,723 Read sensor
+2020-12-08 15:02:09,886 Read sensor
+2020-12-08 15:02:33,956 Read sensor
+2020-12-08 15:02:59,738 Read sensor
+2020-12-08 15:03:15,717 Read sensor
+2020-12-08 15:25:22,788 Read sensor
+2020-12-08 15:26:12,714 Read sensor
+2020-12-08 15:26:27,505 Read sensor
+2020-12-08 15:27:05,433 Read sensor
+2020-12-08 15:27:21,550 Read sensor
+2020-12-08 15:27:56,830 Read sensor
+2020-12-08 15:28:01,138 Read sensor
+2020-12-08 15:28:11,557 Read sensor
+2020-12-08 15:28:14,218 Read sensor
+2020-12-08 15:28:17,270 Read sensor
+2020-12-08 15:28:19,597 Read sensor
+2020-12-08 15:29:41,435 Read sensor
+2020-12-08 15:34:06,751 Read sensor
+2020-12-08 15:35:38,056 Read sensor
+2020-12-08 15:35:41,488 Read sensor
+2020-12-08 15:35:45,921 Read sensor
+2020-12-08 15:37:26,356 Read sensor
+2020-12-08 15:38:29,244 Read sensor
+2020-12-08 16:18:58,824 Read sensor
+2020-12-08 17:30:06,518 Using selector: KqueueSelector
+2020-12-08 17:30:35,705 Using selector: KqueueSelector
+2020-12-08 17:32:37,776 Using selector: KqueueSelector
+2020-12-08 17:33:37,686 Using selector: KqueueSelector
+2020-12-08 17:38:38,658 Using selector: KqueueSelector
+2020-12-08 17:39:28,638 Using selector: KqueueSelector
+2020-12-08 23:00:51,537 Using selector: KqueueSelector
+2020-12-08 23:00:52,531 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:00:52,547 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:01:05,844 Using selector: KqueueSelector
+2020-12-08 23:01:06,893 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:01:06,895 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:13:23,262 Using selector: KqueueSelector
+2020-12-08 23:29:49,762 Using selector: KqueueSelector
+2020-12-08 23:30:16,646 Using selector: KqueueSelector
+2020-12-08 23:30:26,874 Using selector: KqueueSelector
+2020-12-08 23:33:42,441 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:33:42,444 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1489
+2020-12-08 23:33:42,444 Using selector: KqueueSelector
+2020-12-08 23:34:20,784 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:34:20,789 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1489
+2020-12-08 23:34:36,732 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:34:36,746 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1490
+2020-12-08 23:34:36,758 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:34:36,759 http://localhost:8090 "POST /api/main/view?az=180&alt=45 HTTP/1.1" 200 2
+2020-12-08 23:34:36,762 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:34:36,763 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:36:08,150 Using selector: KqueueSelector
+2020-12-08 23:39:10,399 Using selector: KqueueSelector
+2020-12-08 23:41:59,478 Using selector: KqueueSelector
+2020-12-08 23:42:08,524 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:42:08,537 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-08 23:42:08,538 Using selector: KqueueSelector
+2020-12-08 23:42:09,450 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:42:09,452 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:42:09,454 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:42:09,504 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:43:16,032 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:43:16,061 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-08 23:43:16,062 Using selector: KqueueSelector
+2020-12-08 23:43:17,248 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:43:17,249 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:43:17,251 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:43:17,253 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:44:22,606 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:22,609 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-08 23:44:22,610 Using selector: KqueueSelector
+2020-12-08 23:44:33,495 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:33,512 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1490
+2020-12-08 23:44:33,513 Using selector: KqueueSelector
+2020-12-08 23:44:34,393 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:34,408 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:44:34,411 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:34,413 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:44:34,414 Using selector: KqueueSelector
+2020-12-08 23:44:35,567 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:35,583 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:44:35,586 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:35,588 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:44:35,589 Using selector: KqueueSelector
+2020-12-08 23:44:36,456 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:36,480 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:44:36,483 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:36,485 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:44:36,486 Using selector: KqueueSelector
+2020-12-08 23:44:37,358 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:37,375 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:44:37,377 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:44:37,379 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:44:37,380 Using selector: KqueueSelector
+2020-12-08 23:47:25,625 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:47:25,651 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1490
+2020-12-08 23:47:25,652 Using selector: KqueueSelector
+2020-12-08 23:47:42,634 Using selector: KqueueSelector
+2020-12-08 23:51:56,636 Using selector: KqueueSelector
+2020-12-08 23:52:09,188 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:09,191 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-08 23:52:09,192 Using selector: KqueueSelector
+2020-12-08 23:52:10,076 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:10,078 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:10,080 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:10,082 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:10,082 Using selector: KqueueSelector
+2020-12-08 23:52:11,359 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:11,415 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:11,419 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:11,479 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:11,480 Using selector: KqueueSelector
+2020-12-08 23:52:12,726 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:12,772 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:12,777 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:12,779 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:12,779 Using selector: KqueueSelector
+2020-12-08 23:52:13,659 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:13,661 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:13,663 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:13,691 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:13,692 Using selector: KqueueSelector
+2020-12-08 23:52:14,566 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:14,590 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:14,593 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:14,595 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:14,596 Using selector: KqueueSelector
+2020-12-08 23:52:41,751 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:41,755 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-08 23:52:41,756 Using selector: KqueueSelector
+2020-12-08 23:52:42,799 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:42,814 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:42,817 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:42,819 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:42,820 Using selector: KqueueSelector
+2020-12-08 23:52:43,700 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:43,709 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:43,712 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:43,714 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:43,715 Using selector: KqueueSelector
+2020-12-08 23:52:44,845 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:44,847 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:44,849 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:44,850 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:44,850 Using selector: KqueueSelector
+2020-12-08 23:52:45,977 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:46,005 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:46,008 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:46,010 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:46,011 Using selector: KqueueSelector
+2020-12-08 23:52:47,140 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:47,141 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-08 23:52:47,143 Starting new HTTP connection (1): localhost:8090
+2020-12-08 23:52:47,144 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-08 23:52:47,145 Using selector: KqueueSelector
+2020-12-08 23:56:16,349 Using selector: KqueueSelector
+2020-12-08 23:56:21,829 Using selector: KqueueSelector
+2020-12-08 23:56:27,897 Using selector: KqueueSelector
+2020-12-08 23:56:30,497 Using selector: KqueueSelector
+2020-12-08 23:56:33,618 Using selector: KqueueSelector
+2020-12-08 23:56:36,698 Using selector: KqueueSelector
+2020-12-08 23:56:40,442 Using selector: KqueueSelector
+2020-12-09 00:01:40,293 Using selector: KqueueSelector
+2020-12-09 00:17:04,500 Using selector: KqueueSelector
+2020-12-09 00:17:08,258 Using selector: KqueueSelector
+2020-12-09 00:17:13,201 Using selector: KqueueSelector
+2020-12-09 00:17:22,899 Using selector: KqueueSelector
+2020-12-09 00:17:38,710 Using selector: KqueueSelector
+2020-12-09 00:40:42,100 Using selector: KqueueSelector
+2020-12-09 00:40:56,874 Using selector: KqueueSelector
+2020-12-09 00:41:08,459 Using selector: KqueueSelector
+2020-12-09 00:41:10,819 Using selector: KqueueSelector
+2020-12-09 00:41:14,933 Using selector: KqueueSelector
+2020-12-09 00:41:17,276 Using selector: KqueueSelector
+2020-12-09 00:41:24,040 Using selector: KqueueSelector
+2020-12-09 00:41:26,226 Using selector: KqueueSelector
+2020-12-09 00:41:29,269 Using selector: KqueueSelector
+2020-12-09 00:41:33,127 Using selector: KqueueSelector
+2020-12-09 00:41:35,225 Using selector: KqueueSelector
+2020-12-09 00:41:37,679 Using selector: KqueueSelector
+2020-12-09 00:41:39,975 Using selector: KqueueSelector
+2020-12-09 00:41:42,406 Using selector: KqueueSelector
+2020-12-09 00:41:44,670 Using selector: KqueueSelector
+2020-12-09 00:41:47,503 Using selector: KqueueSelector
+2020-12-09 00:41:49,539 Using selector: KqueueSelector
+2020-12-09 00:41:51,690 Using selector: KqueueSelector
+2020-12-09 00:41:53,833 Using selector: KqueueSelector
+2020-12-09 00:41:56,238 Using selector: KqueueSelector
+2020-12-09 00:41:58,342 Using selector: KqueueSelector
+2020-12-09 00:42:00,171 Using selector: KqueueSelector
+2020-12-09 00:42:23,872 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:42:23,878 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:42:23,879 Using selector: KqueueSelector
+2020-12-09 00:42:24,729 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:42:24,760 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:42:24,762 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:42:24,764 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:42:24,765 Using selector: KqueueSelector
+2020-12-09 00:42:30,941 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:42:30,972 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1490
+2020-12-09 00:42:30,973 Using selector: KqueueSelector
+2020-12-09 00:42:31,814 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:42:31,816 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:42:31,819 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:42:31,821 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:42:31,822 Using selector: KqueueSelector
+2020-12-09 00:42:38,655 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:42:38,658 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1490
+2020-12-09 00:42:38,659 Using selector: KqueueSelector
+2020-12-09 00:43:17,864 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:43:17,867 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:43:17,868 Using selector: KqueueSelector
+2020-12-09 00:43:29,472 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:43:29,490 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:43:29,491 Using selector: KqueueSelector
+2020-12-09 00:43:30,333 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:43:30,335 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:43:30,338 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:43:30,340 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:43:30,340 Using selector: KqueueSelector
+2020-12-09 00:43:31,177 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:43:31,178 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:43:31,180 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:43:31,181 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:43:31,182 Using selector: KqueueSelector
+2020-12-09 00:43:32,019 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:43:32,021 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:43:32,023 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:43:32,024 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:43:32,025 Using selector: KqueueSelector
+2020-12-09 00:44:04,051 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:44:04,055 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:44:04,056 Using selector: KqueueSelector
+2020-12-09 00:47:01,460 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:47:01,463 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:47:01,463 Using selector: KqueueSelector
+2020-12-09 00:47:02,303 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:47:02,305 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:47:02,307 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:47:02,309 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:47:02,309 Using selector: KqueueSelector
+2020-12-09 00:47:03,148 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:47:03,150 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:47:03,152 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:47:03,182 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:47:03,182 Using selector: KqueueSelector
+2020-12-09 00:47:09,218 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:47:09,231 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:47:09,232 Using selector: KqueueSelector
+2020-12-09 00:47:10,077 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:47:10,079 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:47:10,081 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:47:10,082 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:47:10,083 Using selector: KqueueSelector
+2020-12-09 00:47:59,912 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:47:59,916 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:47:59,917 Using selector: KqueueSelector
+2020-12-09 00:48:00,791 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:00,807 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:00,810 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:00,812 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:00,812 Using selector: KqueueSelector
+2020-12-09 00:48:01,649 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:01,651 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:01,654 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:01,656 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:01,657 Using selector: KqueueSelector
+2020-12-09 00:48:02,494 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:02,496 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:02,498 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:02,500 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:02,501 Using selector: KqueueSelector
+2020-12-09 00:48:03,336 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:03,378 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:03,382 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:03,440 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:03,442 Using selector: KqueueSelector
+2020-12-09 00:48:04,289 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:04,347 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:04,351 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:04,411 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:04,413 Using selector: KqueueSelector
+2020-12-09 00:48:05,256 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:05,276 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:05,279 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:05,281 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:05,281 Using selector: KqueueSelector
+2020-12-09 00:48:06,121 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:06,123 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:06,125 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:06,127 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:06,127 Using selector: KqueueSelector
+2020-12-09 00:48:06,962 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:06,964 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:06,966 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:06,968 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:06,969 Using selector: KqueueSelector
+2020-12-09 00:48:36,753 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:36,756 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1490
+2020-12-09 00:48:36,757 Using selector: KqueueSelector
+2020-12-09 00:48:37,596 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:37,598 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:37,600 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:37,601 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:37,601 Using selector: KqueueSelector
+2020-12-09 00:48:38,437 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:38,439 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:38,441 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:38,442 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:38,442 Using selector: KqueueSelector
+2020-12-09 00:48:39,277 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:39,279 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:39,281 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:39,283 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:39,283 Using selector: KqueueSelector
+2020-12-09 00:48:40,125 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:40,127 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:40,129 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:40,131 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:40,132 Using selector: KqueueSelector
+2020-12-09 00:48:40,967 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:40,969 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:48:40,971 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:48:41,002 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:48:41,003 Using selector: KqueueSelector
+2020-12-09 00:49:05,481 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:05,484 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1490
+2020-12-09 00:49:05,485 Using selector: KqueueSelector
+2020-12-09 00:49:06,564 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:06,595 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:06,598 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:06,600 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:06,601 Using selector: KqueueSelector
+2020-12-09 00:49:07,440 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:07,442 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:07,444 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:07,446 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:07,446 Using selector: KqueueSelector
+2020-12-09 00:49:08,281 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:08,283 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:08,285 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:08,287 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:08,288 Using selector: KqueueSelector
+2020-12-09 00:49:09,126 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:09,129 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:09,131 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:09,132 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:09,133 Using selector: KqueueSelector
+2020-12-09 00:49:09,976 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:09,978 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:09,980 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:10,010 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:10,010 Using selector: KqueueSelector
+2020-12-09 00:49:10,854 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:10,856 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:10,859 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:10,861 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:10,861 Using selector: KqueueSelector
+2020-12-09 00:49:11,700 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:11,702 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:11,704 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:11,706 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:11,706 Using selector: KqueueSelector
+2020-12-09 00:49:28,794 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:28,826 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:49:28,827 Using selector: KqueueSelector
+2020-12-09 00:49:29,668 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:29,670 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:29,673 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:29,674 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:29,675 Using selector: KqueueSelector
+2020-12-09 00:49:30,518 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:30,519 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:30,521 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:30,523 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:30,523 Using selector: KqueueSelector
+2020-12-09 00:49:31,428 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:31,457 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:31,459 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:31,461 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:31,462 Using selector: KqueueSelector
+2020-12-09 00:49:32,300 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:32,302 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:32,304 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:32,306 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:32,307 Using selector: KqueueSelector
+2020-12-09 00:49:33,143 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:33,145 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:33,147 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:33,149 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:33,150 Using selector: KqueueSelector
+2020-12-09 00:49:47,574 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:47,586 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1490
+2020-12-09 00:49:47,588 Using selector: KqueueSelector
+2020-12-09 00:49:48,453 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:48,480 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:48,483 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:48,485 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:48,486 Using selector: KqueueSelector
+2020-12-09 00:49:49,326 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:49,328 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:49,331 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:49,333 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:49,334 Using selector: KqueueSelector
+2020-12-09 00:49:50,174 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:50,176 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:49:50,178 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:49:50,179 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:49:50,180 Using selector: KqueueSelector
+2020-12-09 00:50:40,369 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:50:40,396 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:50:40,397 Using selector: KqueueSelector
+2020-12-09 00:50:48,157 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:50:48,179 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:50:48,180 Using selector: KqueueSelector
+2020-12-09 00:50:49,018 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:50:49,021 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:50:49,024 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:50:49,026 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:50:49,026 Using selector: KqueueSelector
+2020-12-09 00:50:53,053 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:50:53,055 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:50:53,056 Using selector: KqueueSelector
+2020-12-09 00:50:55,095 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:50:55,120 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1490
+2020-12-09 00:50:55,122 Using selector: KqueueSelector
+2020-12-09 00:50:55,963 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:50:55,965 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:50:55,968 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:50:55,970 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:50:55,970 Using selector: KqueueSelector
+2020-12-09 00:52:19,026 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:19,029 http://localhost:8090 "GET /api/main/status?propId=1&actionId=1 HTTP/1.1" 200 1491
+2020-12-09 00:52:19,029 Using selector: KqueueSelector
+2020-12-09 00:52:20,115 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:20,125 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:20,128 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:20,130 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:20,131 Using selector: KqueueSelector
+2020-12-09 00:52:20,963 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:20,969 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:20,972 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:20,974 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:20,975 Using selector: KqueueSelector
+2020-12-09 00:52:21,808 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:21,811 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:21,813 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:21,815 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:21,816 Using selector: KqueueSelector
+2020-12-09 00:52:22,654 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:22,656 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:22,659 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:22,660 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:22,661 Using selector: KqueueSelector
+2020-12-09 00:52:23,495 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:23,496 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:23,498 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:23,500 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:23,500 Using selector: KqueueSelector
+2020-12-09 00:52:24,474 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:24,495 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:24,497 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:24,500 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:24,500 Using selector: KqueueSelector
+2020-12-09 00:52:25,334 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:25,391 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:25,395 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:25,453 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:25,454 Using selector: KqueueSelector
+2020-12-09 00:52:26,446 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:26,483 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:26,487 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:26,547 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:26,548 Using selector: KqueueSelector
+2020-12-09 00:52:27,386 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:27,412 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:27,415 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:27,417 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:27,417 Using selector: KqueueSelector
+2020-12-09 00:52:28,253 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:28,255 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:28,257 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:28,259 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:28,259 Using selector: KqueueSelector
+2020-12-09 00:52:29,095 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:29,097 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:29,099 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:29,100 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:29,101 Using selector: KqueueSelector
+2020-12-09 00:52:29,933 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:29,935 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:29,938 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:29,940 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:29,940 Using selector: KqueueSelector
+2020-12-09 00:52:30,775 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:30,776 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:30,778 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:30,780 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:30,780 Using selector: KqueueSelector
+2020-12-09 00:52:31,617 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:31,619 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:31,622 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:31,624 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:31,625 Using selector: KqueueSelector
+2020-12-09 00:52:32,463 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:32,465 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:32,468 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:32,469 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:32,469 Using selector: KqueueSelector
+2020-12-09 00:52:33,304 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:33,306 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:33,308 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:33,310 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:33,310 Using selector: KqueueSelector
+2020-12-09 00:52:34,144 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:34,146 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:34,149 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:34,150 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:34,151 Using selector: KqueueSelector
+2020-12-09 00:52:35,024 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:35,025 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:35,028 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:35,030 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:35,031 Using selector: KqueueSelector
+2020-12-09 00:52:35,866 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:35,868 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:35,871 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:35,873 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:35,874 Using selector: KqueueSelector
+2020-12-09 00:52:36,707 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:36,709 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:36,712 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:36,714 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:36,714 Using selector: KqueueSelector
+2020-12-09 00:52:37,553 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:37,554 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:37,556 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:37,557 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:37,558 Using selector: KqueueSelector
+2020-12-09 00:52:38,529 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:38,552 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:38,555 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:38,557 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:38,558 Using selector: KqueueSelector
+2020-12-09 00:52:39,392 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:39,395 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:39,398 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:39,400 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:39,401 Using selector: KqueueSelector
+2020-12-09 00:52:40,232 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:40,234 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:40,237 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:40,239 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:40,240 Using selector: KqueueSelector
+2020-12-09 00:52:41,074 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:41,077 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:41,079 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:41,081 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:41,082 Using selector: KqueueSelector
+2020-12-09 00:52:41,918 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:41,920 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:41,922 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:41,924 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:41,925 Using selector: KqueueSelector
+2020-12-09 00:52:42,764 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:42,765 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:42,768 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:42,769 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:42,769 Using selector: KqueueSelector
+2020-12-09 00:52:43,585 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:43,595 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:43,598 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:43,600 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:43,600 Using selector: KqueueSelector
+2020-12-09 00:52:44,432 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:44,434 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:44,436 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:44,438 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:44,439 Using selector: KqueueSelector
+2020-12-09 00:52:45,278 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:45,281 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:45,284 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:45,286 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:45,286 Using selector: KqueueSelector
+2020-12-09 00:52:46,117 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:46,119 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:46,122 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:46,130 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:46,130 Using selector: KqueueSelector
+2020-12-09 00:52:46,964 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:46,967 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:46,969 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:46,970 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:46,971 Using selector: KqueueSelector
+2020-12-09 00:52:47,856 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:47,858 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:47,861 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:47,862 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:47,863 Using selector: KqueueSelector
+2020-12-09 00:52:48,702 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:48,705 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:48,707 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:48,708 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:48,709 Using selector: KqueueSelector
+2020-12-09 00:52:49,542 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:49,544 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:49,546 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:49,548 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:49,548 Using selector: KqueueSelector
+2020-12-09 00:52:50,384 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:50,386 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:50,388 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:50,390 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:50,391 Using selector: KqueueSelector
+2020-12-09 00:52:51,210 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:51,211 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:51,214 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:51,216 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:51,217 Using selector: KqueueSelector
+2020-12-09 00:52:52,050 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:52,052 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:52,055 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:52,056 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:52,057 Using selector: KqueueSelector
+2020-12-09 00:52:52,892 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:52,894 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:52,896 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:52,898 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:52,899 Using selector: KqueueSelector
+2020-12-09 00:52:53,777 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:53,786 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:53,788 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:53,790 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:53,791 Using selector: KqueueSelector
+2020-12-09 00:52:54,621 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:54,624 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:54,627 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:54,629 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:54,630 Using selector: KqueueSelector
+2020-12-09 00:52:55,592 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:55,594 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:55,596 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:55,597 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:55,597 Using selector: KqueueSelector
+2020-12-09 00:52:56,434 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:56,436 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:56,438 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:56,439 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:56,439 Using selector: KqueueSelector
+2020-12-09 00:52:57,273 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:57,275 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:57,276 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:57,278 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:57,278 Using selector: KqueueSelector
+2020-12-09 00:52:58,114 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:58,115 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:58,117 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:58,118 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:58,119 Using selector: KqueueSelector
+2020-12-09 00:52:58,953 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:58,955 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:58,957 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:58,958 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:58,959 Using selector: KqueueSelector
+2020-12-09 00:52:59,792 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:59,793 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:52:59,795 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:52:59,796 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:52:59,797 Using selector: KqueueSelector
+2020-12-09 00:53:00,632 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:00,634 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:00,636 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:00,638 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:00,638 Using selector: KqueueSelector
+2020-12-09 00:53:01,472 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:01,474 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:01,476 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:01,477 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:01,478 Using selector: KqueueSelector
+2020-12-09 00:53:02,309 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:02,311 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:02,313 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:02,315 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:02,315 Using selector: KqueueSelector
+2020-12-09 00:53:03,153 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:03,155 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:03,157 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:03,158 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:03,159 Using selector: KqueueSelector
+2020-12-09 00:53:03,973 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:03,976 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:03,979 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:03,981 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:03,982 Using selector: KqueueSelector
+2020-12-09 00:53:04,819 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:04,821 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:04,824 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:04,826 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:04,827 Using selector: KqueueSelector
+2020-12-09 00:53:05,706 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:05,714 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:05,717 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:05,719 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:05,720 Using selector: KqueueSelector
+2020-12-09 00:53:06,559 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:06,561 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:06,564 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:06,566 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:06,567 Using selector: KqueueSelector
+2020-12-09 00:53:07,400 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:07,402 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:07,404 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:07,406 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:07,407 Using selector: KqueueSelector
+2020-12-09 00:53:08,241 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:08,243 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:08,246 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:08,247 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:08,248 Using selector: KqueueSelector
+2020-12-09 00:53:09,084 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:09,086 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:09,088 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:09,089 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:09,089 Using selector: KqueueSelector
+2020-12-09 00:53:09,931 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:09,933 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:09,935 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:09,936 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:09,937 Using selector: KqueueSelector
+2020-12-09 00:53:10,772 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:10,774 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:10,776 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:10,777 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:10,778 Using selector: KqueueSelector
+2020-12-09 00:53:11,613 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:11,614 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:11,616 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:11,617 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:11,618 Using selector: KqueueSelector
+2020-12-09 00:53:12,446 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:12,447 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:12,450 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:12,451 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:12,452 Using selector: KqueueSelector
+2020-12-09 00:53:13,296 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:13,298 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:13,300 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:13,331 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:13,332 Using selector: KqueueSelector
+2020-12-09 00:53:14,171 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:14,173 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:14,176 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:14,178 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:14,178 Using selector: KqueueSelector
+2020-12-09 00:53:15,006 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:15,008 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:15,011 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:15,013 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:15,013 Using selector: KqueueSelector
+2020-12-09 00:53:15,851 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:15,853 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:15,862 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:15,864 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:15,864 Using selector: KqueueSelector
+2020-12-09 00:53:16,705 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:16,706 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:16,708 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:16,709 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:16,710 Using selector: KqueueSelector
+2020-12-09 00:53:17,542 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:17,545 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:17,547 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:17,549 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:17,550 Using selector: KqueueSelector
+2020-12-09 00:53:18,436 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:18,438 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:18,440 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:18,441 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:18,442 Using selector: KqueueSelector
+2020-12-09 00:53:19,284 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:19,286 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:19,289 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:19,318 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:19,319 Using selector: KqueueSelector
+2020-12-09 00:53:20,163 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:20,165 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:20,167 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:20,170 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:20,170 Using selector: KqueueSelector
+2020-12-09 00:53:21,004 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:21,006 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:21,009 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:21,010 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:21,011 Using selector: KqueueSelector
+2020-12-09 00:53:21,903 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:21,905 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:21,908 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:21,910 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:21,910 Using selector: KqueueSelector
+2020-12-09 00:53:22,743 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:22,745 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:22,747 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:22,748 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:22,749 Using selector: KqueueSelector
+2020-12-09 00:53:23,589 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:23,591 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:23,593 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:23,594 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:23,595 Using selector: KqueueSelector
+2020-12-09 00:53:24,431 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:24,432 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:24,434 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:24,436 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:24,436 Using selector: KqueueSelector
+2020-12-09 00:53:25,268 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:25,269 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:25,271 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:25,272 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:25,273 Using selector: KqueueSelector
+2020-12-09 00:53:26,108 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:26,110 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:26,113 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:26,114 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:26,115 Using selector: KqueueSelector
+2020-12-09 00:53:26,948 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:26,950 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:26,952 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:26,954 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:26,954 Using selector: KqueueSelector
+2020-12-09 00:53:27,790 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:27,792 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:27,794 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:27,795 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:27,796 Using selector: KqueueSelector
+2020-12-09 00:53:28,644 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:28,674 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:28,677 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:28,679 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:28,679 Using selector: KqueueSelector
+2020-12-09 00:53:29,515 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:29,517 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:29,520 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:29,522 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:29,522 Using selector: KqueueSelector
+2020-12-09 00:53:30,356 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:30,358 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:30,360 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:30,363 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:30,363 Using selector: KqueueSelector
+2020-12-09 00:53:31,201 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:31,203 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:31,206 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:31,208 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:31,208 Using selector: KqueueSelector
+2020-12-09 00:53:32,032 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:32,034 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:32,037 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:32,039 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:32,040 Using selector: KqueueSelector
+2020-12-09 00:53:32,868 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:32,871 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:32,874 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:32,876 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:32,876 Using selector: KqueueSelector
+2020-12-09 00:53:33,716 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:33,718 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:33,721 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:33,723 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:33,724 Using selector: KqueueSelector
+2020-12-09 00:53:34,601 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:34,610 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:34,612 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:34,614 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:34,615 Using selector: KqueueSelector
+2020-12-09 00:53:35,451 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:35,453 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:35,455 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:35,457 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:35,458 Using selector: KqueueSelector
+2020-12-09 00:53:36,434 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:36,455 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:36,457 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:36,459 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:36,460 Using selector: KqueueSelector
+2020-12-09 00:53:37,290 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:37,298 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:37,301 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:37,303 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:37,303 Using selector: KqueueSelector
+2020-12-09 00:53:38,136 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:38,138 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:38,141 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:38,143 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:38,144 Using selector: KqueueSelector
+2020-12-09 00:53:38,981 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:38,983 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:38,986 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:38,988 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:38,988 Using selector: KqueueSelector
+2020-12-09 00:53:39,823 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:39,825 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:39,827 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:39,829 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:39,829 Using selector: KqueueSelector
+2020-12-09 00:53:40,663 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:40,665 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:40,668 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:40,669 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:40,670 Using selector: KqueueSelector
+2020-12-09 00:53:41,506 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:41,508 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:41,510 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:41,511 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:41,512 Using selector: KqueueSelector
+2020-12-09 00:53:42,346 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:42,348 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:42,350 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:42,351 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:42,352 Using selector: KqueueSelector
+2020-12-09 00:53:43,282 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:43,291 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:43,294 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:43,296 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:43,296 Using selector: KqueueSelector
+2020-12-09 00:53:44,137 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:44,140 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:44,144 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:44,146 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:44,146 Using selector: KqueueSelector
+2020-12-09 00:53:44,981 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:44,984 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:44,986 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:44,987 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:44,988 Using selector: KqueueSelector
+2020-12-09 00:53:45,820 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:45,822 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:45,853 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:45,863 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:45,863 Using selector: KqueueSelector
+2020-12-09 00:53:46,701 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:46,706 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:46,709 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:46,711 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:46,712 Using selector: KqueueSelector
+2020-12-09 00:53:47,632 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:47,656 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:47,659 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:47,661 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:47,662 Using selector: KqueueSelector
+2020-12-09 00:53:48,505 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:48,507 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:48,509 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:48,510 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:48,511 Using selector: KqueueSelector
+2020-12-09 00:53:49,351 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:49,353 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:49,355 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:49,356 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:49,357 Using selector: KqueueSelector
+2020-12-09 00:53:50,195 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:50,197 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:50,199 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:50,229 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:50,230 Using selector: KqueueSelector
+2020-12-09 00:53:51,066 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:51,072 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:51,075 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:51,077 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:51,077 Using selector: KqueueSelector
+2020-12-09 00:53:51,907 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:51,913 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:51,916 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:51,918 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:51,919 Using selector: KqueueSelector
+2020-12-09 00:53:52,731 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:52,750 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:52,753 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:52,755 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:52,755 Using selector: KqueueSelector
+2020-12-09 00:53:54,100 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:54,102 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:54,104 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:54,107 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:54,107 Using selector: KqueueSelector
+2020-12-09 00:53:54,977 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:54,993 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:54,996 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:54,998 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:54,999 Using selector: KqueueSelector
+2020-12-09 00:53:55,838 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:55,840 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:55,842 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:55,845 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:55,846 Using selector: KqueueSelector
+2020-12-09 00:53:56,715 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:56,729 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:56,732 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:56,734 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:56,734 Using selector: KqueueSelector
+2020-12-09 00:53:57,566 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:57,569 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:57,572 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:57,574 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:57,575 Using selector: KqueueSelector
+2020-12-09 00:53:58,405 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:58,407 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:58,410 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:58,412 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:58,412 Using selector: KqueueSelector
+2020-12-09 00:53:59,225 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:59,250 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:53:59,253 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:53:59,255 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:53:59,256 Using selector: KqueueSelector
+2020-12-09 00:54:00,089 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:00,091 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:00,093 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:00,095 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:00,096 Using selector: KqueueSelector
+2020-12-09 00:54:00,922 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:00,927 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:00,929 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:00,932 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:00,932 Using selector: KqueueSelector
+2020-12-09 00:54:01,767 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:01,769 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:01,771 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:01,773 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:01,774 Using selector: KqueueSelector
+2020-12-09 00:54:02,732 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:02,734 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:02,736 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:02,737 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:02,738 Using selector: KqueueSelector
+2020-12-09 00:54:03,559 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:03,561 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:03,563 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:03,565 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:03,566 Using selector: KqueueSelector
+2020-12-09 00:54:04,397 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:04,401 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:04,404 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:04,406 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:04,407 Using selector: KqueueSelector
+2020-12-09 00:54:05,223 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:05,238 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:05,240 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:05,243 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:05,243 Using selector: KqueueSelector
+2020-12-09 00:54:06,075 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:06,078 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:06,080 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:06,082 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:06,083 Using selector: KqueueSelector
+2020-12-09 00:54:06,900 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:06,921 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:06,924 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:06,926 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:06,927 Using selector: KqueueSelector
+2020-12-09 00:54:07,763 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:07,765 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:07,768 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:07,770 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:07,770 Using selector: KqueueSelector
+2020-12-09 00:54:08,694 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:08,710 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:08,713 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:08,715 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:08,715 Using selector: KqueueSelector
+2020-12-09 00:54:09,548 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:09,552 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:09,555 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:09,557 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:09,558 Using selector: KqueueSelector
+2020-12-09 00:54:10,375 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:10,394 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:10,396 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:10,399 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:10,399 Using selector: KqueueSelector
+2020-12-09 00:54:11,229 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:11,231 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:11,233 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:11,236 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:11,236 Using selector: KqueueSelector
+2020-12-09 00:54:12,066 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:12,072 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:12,075 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:12,077 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:12,078 Using selector: KqueueSelector
+2020-12-09 00:54:12,917 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:12,919 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:12,922 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:12,924 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:12,924 Using selector: KqueueSelector
+2020-12-09 00:54:13,759 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:13,761 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:13,764 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:13,766 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:13,766 Using selector: KqueueSelector
+2020-12-09 00:54:14,602 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:14,604 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:14,606 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:14,608 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:14,608 Using selector: KqueueSelector
+2020-12-09 00:54:15,437 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:15,439 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:15,444 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:15,446 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:15,447 Using selector: KqueueSelector
+2020-12-09 00:54:16,409 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:16,439 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:16,442 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:16,444 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:16,445 Using selector: KqueueSelector
+2020-12-09 00:54:17,283 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:17,285 http://localhost:8090 "POST /api/main/view?az=8.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:54:17,288 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:54:17,290 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:54:17,291 Using selector: KqueueSelector
+2020-12-09 00:55:19,182 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:55:19,214 http://localhost:8090 "POST /api/main/view?az=0.0&alt=0.0 HTTP/1.1" 200 2
+2020-12-09 00:55:19,216 Starting new HTTP connection (1): localhost:8090
+2020-12-09 00:55:19,218 http://localhost:8090 "POST /api/main/fov?fov=5 HTTP/1.1" 200 2
+2020-12-09 00:55:19,219 Using selector: KqueueSelector
+>>>>>>> b2d98a61379d716e59147ac470082119294bc27a
