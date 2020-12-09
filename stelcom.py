@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
     while True:
         received = client.main()
-        print('Euler angles : ', received['Euler angle'])
+        #print('Euler angles : ', received['Euler angle'])
         az = received['Euler angle'][0]
         alt = received['Euler angle'][1]
 

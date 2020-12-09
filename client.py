@@ -35,6 +35,7 @@ async def tcp_echo_client(message):
     except:
         print('Some values returned Null, not able to extract data')
         print('--')
+        b_dict={'Euler angle' : [0.0,0.0,0.0]}
         pass
 
     finally:
