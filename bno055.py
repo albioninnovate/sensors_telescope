@@ -3,7 +3,7 @@ import board
 import busio
 import adafruit_bno055
 import json
-
+import pprint
 
 # Use these lines for I2C
 def start_sensor():
@@ -48,20 +48,26 @@ def to_json(dict):
 def main(output_format='dict'):
     sensor = start_sensor()
 
-
     imu_data = read(sensor, verbose=False)
 
+    pprint.pprint(imu_data) 
 
     if output_format=='json':
         imu_data = to_json(imu_data)
 
 
-    print(imu_data)
+    pprint.pprint(imu_data)
     return imu_data
 
 if __name__ == '__main__':
     sensor = start_sensor()
     while True:
         imu_data = read(sensor, verbose=False)
-        print(imu_data)
+
+        pprint.pprint(imu_data) 
+
+        imu_data = to_json(imu_data)
+
+        pprint.pprint(imu_data)
+
         time.sleep(1)

@@ -1,12 +1,11 @@
-import asyncio
-import bno055
+import asyncioimport bno055
 import logging
 import configparser
 
 
 logging.basicConfig(format='%(asctime)s %(message)s',
                     filename='server.log',
-                    level=logging.DEBUG)
+                    level=logging.INFO)
 
 # Read config file
 config = configparser.ConfigParser()
@@ -21,11 +20,23 @@ async def handle_echo(reader, writer):
     logging.info('Read sensor')
     print('sensor', sensor)
 
+    # print(type(sensor))
+    # if type(sensor) == bytes is True:
+    #     print('not bytes')
+    #     try:
+    #         data = sensor.encode()
+    #     except Exception as e:
+    #         print(e)
+    #         pass
+    # elif type(sensor) == bytes is True:
+    #     print('bytes')
+    #     data = sensor
+
     data = sensor
 
     addr = writer.get_extra_info('peername')
-    logging.info(addr)	
 
+    #print(f'Received {message!r} from {addr!r}')
     print('Received', message, 'from',addr)
 
     print('Send: ' , message)
