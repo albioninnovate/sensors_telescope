@@ -14,7 +14,8 @@ config.read('config.ini')
 
 
 async def handle_echo(reader, writer):
-    data = await reader.read(int(config['DATA']['characters']))
+    n = 500
+    data = await reader.read(n)
     message = data.decode()
 
     sensor = bno055.main(output_format='json')
