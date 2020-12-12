@@ -40,8 +40,6 @@ def read(sensor, verbose=True):
         "Gravity"               : sensor.gravity
 
                 }
-
-
     if verbose is True:
         pprint(readings)
 #        print("Temperature: {} degrees C".format(sensor.temperature))
@@ -67,17 +65,17 @@ def main(output_format='dict',cnt=0):
     except NameError:
         sensor = start_sensor()
 
-    while cnt <= 20:
+    while cnt <= 10:
         imu_data = read(sensor, verbose=False)
 
-        print('original sensor output')
-        pprint.pprint(imu_data) 
+        #print('original sensor output')
+        #pprint.pprint(imu_data)
 
         if output_format=='json':
             imu_data = to_json(imu_data)
 
-        print('returned sensor output')
-        pprint.pprint(imu_data)
+        #print('returned sensor output')
+        #pprint.pprint(imu_data)
 
         cnt += 1
 
@@ -89,7 +87,7 @@ if __name__ == '__main__':
 
     while True:
         imu_data = read(sensor, verbose=False)
-        pprint.pprint(imu_data) 
-        imu_data = to_json(imu_data)
-        pprint.pprint(imu_data)
+        #pprint.pprint(imu_data)
+        #print("---")
         time.sleep(1)
+

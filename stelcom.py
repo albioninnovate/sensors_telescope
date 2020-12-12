@@ -15,13 +15,13 @@ def get_status(propId=-2, actionId=-2, verbose=False):
             print(PARAMS)
             pprint.pprint(status.json())
 
+        return status.json()
+
     except Exception as e:
-        status = e
+        #print(e)
+        print("Is Stellarium running with the remote control plugin?")
 
-    return status.json()
 
-# time in julian day
-# location
 
 # https://stellarium.org/doc/head/remoteControlApi.html
 
