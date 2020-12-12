@@ -22,6 +22,7 @@ async def tcp_echo_client(message):
     logging.info('writer : {}'.format(message))
 
     #n = int(config['DATA']['characters'])
+
     n = 500
     data = await reader.read(n)
     #print(f'Received: {data.decode()!r}')
@@ -29,7 +30,7 @@ async def tcp_echo_client(message):
     try:
         data_dict = ast.literal_eval(data.decode())  # extract the dictionary from the string received
         #print(data_dict)
-        print('Euler angles : ', data_dict['Euler angle'])
+        # print('Euler angles : ', data_dict['Euler angle'])
 
     except:
         print('Some values returned Null, not able to extract data')

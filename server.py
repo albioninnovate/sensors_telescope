@@ -14,9 +14,11 @@ config.read('config.ini')
 
 
 async def handle_echo(reader, writer):
+
     #n = int(config['DATA']['characters'])
     n = 500
     data = await reader.read(500)
+
     message = data.decode()
     logging.debug('reader read {}'.format(message) )
 
