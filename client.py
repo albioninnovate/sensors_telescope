@@ -4,7 +4,7 @@ import configparser
 import ast
 
 logging.basicConfig(format='%(asctime)s %(message)s',
-                    filename='server.log',
+                    filename='client.log',
                     level=logging.DEBUG)
 
 # Read config file
@@ -15,12 +15,15 @@ config.read('config.ini')
 async def tcp_echo_client(message):
 
     reader, writer = await asyncio.open_connection('192.168.1.39', 8888)
+    logging.debug('create reader and writer')
 
     #print(f'Send: {message!r}')
     writer.write(message.encode())
+    logging.info('writer : {}'.format(message))
 
     #n = int(config['DATA']['characters'])
-    n= 500
+
+    n = 500
     data = await reader.read(n)
     #print(f'Received: {data.decode()!r}')
 
