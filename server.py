@@ -14,12 +14,15 @@ config.read('config.ini')
 
 
 async def handle_echo(reader, writer):
-    data = await reader.read(int(config['DATA']['characters']))
+    #n = int(config['DATA']['characters'])
+    n = 500
+    data = await reader.read(500)
     message = data.decode()
+    logging.debug('reader read {}'.format(message) )
 
     sensor = bno055.main(output_format='json')
     logging.info('Read sensor')
-    print('sensor', sensor)
+    #print('sensor', sensor)
 
     data = sensor
 
@@ -34,18 +37,15 @@ async def handle_echo(reader, writer):
 
     print("Close the connection")
     writer.close()
+    logging.info('Closed connection')
 
 async def main():
-   # server = await asyncio.start_server(
-    #    handle_echo, '127.0.0.1', 8888)
-
    server = await asyncio.start_server(
        handle_echo, '192.168.1.39', 8888)
 
-
    addr = server.sockets[0].getsockname()
    print('Serving on ', addr)
-   logging.info('Server started')
+   logging.info('Server started on {}'.format(addr))
 
    async with server:
         await server.serve_forever()
