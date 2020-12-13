@@ -55,7 +55,7 @@ def animate(i):
     x_values.append(next(index))
 
     #y_new = get_data()['Quaternion'][1]
-    y_new = condition_data("Quaternion",1)
+    y_new = condition_data("quaternion",1)
     #y_new = abs(y_new)
     y_values.append(y_new)
     print(y_new)
