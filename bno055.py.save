@@ -76,12 +76,14 @@ def main(output_format='dict',cnt=0):
         try:
             imu_data = read(sensor, verbose=False)
 
-            if (None, None, None) in imu_data.values():
+            print(imu_data.values())
+
+            if '(None, None, None)' in imu_data.values():
                 raise Exception('Nones found')
 
-            elif (None, None, None, None) in imu_data.values():
+            elif ('None','None','None','None') in imu_data.values():
                 raise Exception ('Nones found in Quat')
-            pprint.pprint(imu_data)
+#            pprint.pprint(imu_data)
 
         # Getting the current date
         # and time
