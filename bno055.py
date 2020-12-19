@@ -4,6 +4,8 @@ import busio
 import adafruit_bno055
 import json
 import pprint
+import datetime
+from datetime import timezone
 
 """
 reference; 
@@ -67,8 +69,21 @@ def main(output_format='dict',cnt=0):
     except NameError:
         sensor = start_sensor()
 
-    while cnt <= 5:
+    imu_data_stamped = {}    # dict. of dicts {timestamp : imu_data}, imu_data is alsp a dict.
+
+    while cnt <= 20:
         imu_data = read(sensor, verbose=False)
+
+        # Getting the current date
+        # and time
+        dt = datetime.datetime.now()
+
+        utc_time = dt.replace(tzinfo = timezone.utc)
+        timestamp = utc_time.timestamp()
+        #print(utc_timestamp))
+
+        imu_data_stamped[timestamp] = imu_data
+        print(imu_data_stamped)
 
         #TODO  a while cnt <= loop to gram multiple data sets
         #TODO add time stamp to the data sets
