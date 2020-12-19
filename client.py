@@ -2,6 +2,8 @@ import asyncio
 import logging
 import configparser
 import ast
+import pprint
+
 
 logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
                     filename='client.log',
@@ -31,12 +33,13 @@ async def tcp_echo_client(message):
 
     try:
         data_dict = ast.literal_eval(data.decode())  # extract the dictionary from the string received
+ #       data_dict = ast.literal_eval(data)  # extract the dictionary from the string received
+
         logging.debug(data_dict)
 
     except Exception as e:
         logging.debug(e)
-        print('Some values returned Null, not able to extract data')
-        print('--')
+
         data_dict = {}
 
     finally:
@@ -49,6 +52,7 @@ async def tcp_echo_client(message):
 
 def main():
     received  = asyncio.run(tcp_echo_client('Hello World!'))
+    pprint.pprint(received)
     return received
 
 if __name__ == '__main__':
