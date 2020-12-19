@@ -42,8 +42,11 @@ async def handle_echo(reader, writer):
     logging.info('Closed connection')
 
 async def main():
+#   server = await asyncio.start_server(
+#       handle_echo, '192.168.1.39', 8888)
+
    server = await asyncio.start_server(
-       handle_echo, '192.168.1.39', 8888)
+       handle_echo, 'freeside.local', 8888)
 
    addr = server.sockets[0].getsockname()
    print('Serving on ', addr)
