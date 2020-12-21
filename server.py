@@ -1,7 +1,8 @@
 import asyncio
-import bno055
+#import bno055
 import logging
 import configparser
+import  arduino_serial
 
 
 logging.basicConfig(format='%(asctime)s %(message)s',
@@ -16,13 +17,16 @@ config.read('config.ini')
 async def handle_echo(reader, writer):
 
     #n = int(config['DATA']['characters'])
-    n = 5000
+    n = 500000
     data = await reader.read(n)
 
     message = data.decode()
     logging.debug('reader read {}'.format(message) )
 
-    sensor = bno055.main(output_format='json')
+#    sensor = bno055.main(output_format='json')
+
+    sensor = arduino_serial.read(output_format='json')
+
     logging.info('Read sensor')
     #print('sensor', sensor)
 
