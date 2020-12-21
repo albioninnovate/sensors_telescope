@@ -15,13 +15,15 @@ https://github.com/adafruit/Adafruit_CircuitPython_BNO055
 
 # Use these lines for I2C
 def start_sensor():
-    i2c = busio.I2C(board.SCL, board.SDA)
-    sensor = adafruit_bno055.BNO055_I2C(i2c)
-    return sensor
+#    i2c = busio.I2C(board.SCL, board.SDA)
+#    sensor = adafruit_bno055.BNO055_I2C(i2c)
+
 
 # User these lines for UART
-# uart = busio.UART(board.TX, board.RX)
-# sensor = adafruit_bno055.BNO055_UART(uart)
+    uart = busio.UART(board.TX, board.RX)
+    sensor = adafruit_bno055.BNO055_UART(uart)
+
+    return sensor
 
 def read(sensor, verbose=False):
     """

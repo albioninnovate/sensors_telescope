@@ -1,11 +1,11 @@
 # python_live_plot.py
 
-import random
 from itertools import count
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import client
-
+import flatten_dict
+import quaternion
 
 
 def get_data():
@@ -15,38 +15,24 @@ def get_data():
 
     :return:
     """
-
     received = client.main()
-    # print('Euler angles : ', received['Euler angle'])
-    # az = received['Euler angle'][0]
-    # q1 = received['Quaternion'][1]
+
+    #print('get data; ',received )
+
+#    received = flatten_dict.main(received)
+
     return received
 
-def condition_data(quantity,component, samples=5,):
-    print(quantity)
-    measurements = []
-    cnt = 1
+"""
+{'X': '290.8125', 'y': '-2.0000', 'z': '2.8125', 'Sys_cal': '3', 'G_cal': '3', 'A_cal': '1', 'M_cal': '2'}
+"""
 
-    while cnt<= samples:
-        try:
-            measurement  = get_data()[quantity][component]
-            measurements.append(measurement)
-            cnt += 1
-        except KeyError:
-            pass
-
-    data_ave = sum(measurements)/samples
-
-
-    return data_ave
-
-
-
-
-plt.style.use('fivethirtyeight')
 
 x_values = []
-y_values = []
+
+az_values = []
+roll_values = []
+alt_values = []
 
 index = count()
 
@@ -54,16 +40,32 @@ index = count()
 def animate(i):
     x_values.append(next(index))
 
-    y_new = get_data()['Quaternion'][1]
-    #y_new = condition_data("quaternion",1)
-    #y_new = abs(y_new)
-    y_values.append(y_new)
-    print(y_new)
+    data = get_data()
+    print('data ;', data)
+
+    az_values.append(float(data['X']))
+    roll_values.append(float(data['y']))
+    alt_values.append(float(data['z']))
+
     plt.cla()
-    plt.plot(x_values, y_values)
 
 
-ani = FuncAnimation(plt.gcf(), animate, 1000)
+    axs[0].plot(x_values, az_values)
+    plt.ylabel('Az')
+
+    axs[1].plot(x_values, roll_values)
+    plt.ylabel('Roll')
+
+    axs[2].plot(x_values, alt_values)
+    plt.ylabel('Alt')
+
+
+#ani = FuncAnimation(plt.gcf(), animate, 1000)
+
+fig, axs = plt.subplots(3)
+
+
+ani = FuncAnimation(fig, animate, 1000)
 
 
 plt.tight_layout()
