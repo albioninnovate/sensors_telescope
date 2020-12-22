@@ -5,10 +5,21 @@ import ast
 import pprint
 import time
 
+"""
+This module sends a request to the server running on a Rpi.  The server returns data from ardunio_serial.py 
+in a data structure dictated by bno055.ino which is running on the Ardunio and collecting data from the BNO055 board. 
+
+this module receives a JSON object from the server and returns a dictionary.  
+
+"""
+
+
 def start_logging():
     logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
                         filename='client.log',
-                        level=logging.INFO)
+                        level=logging.DEBUG)
+
+#TODO  set the logging in client to be set when the method is called eg. to info or debug
 
 def stat_config():
     # Read config file

@@ -1,13 +1,9 @@
 import numpy as np
 
-
 """
 ref https://stackoverflow.com/questions/56207448/efficient-quaternions-to-euler-transformation
 
 """
-
-
-
 
 def to_euler(w, x, y, z):
     ysqr = y * y
