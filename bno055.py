@@ -4,6 +4,8 @@ import busio
 import adafruit_bno055
 import json
 import pprint
+import datetime
+from datetime import timezone
 
 """
 reference; 
@@ -21,7 +23,7 @@ def start_sensor():
 # uart = busio.UART(board.TX, board.RX)
 # sensor = adafruit_bno055.BNO055_UART(uart)
 
-def read(sensor, verbose=True):
+def read(sensor, verbose=False):
     """
     reads the values from the sensor into a dictonary.
 
@@ -30,29 +32,31 @@ def read(sensor, verbose=True):
     :return:
     """
     readings = {
-        "Temperature"           : sensor.temperature,
-        "Accelerometer"         : sensor.acceleration,
-        "Magnetometer"          : sensor.magnetic,
-        "Gyroscope"             : sensor.gyro,
-        "Euler angle"           : sensor.euler,
-        "Quaternion"            : sensor.quaternion,
-        "Linear acceleration"   : sensor.linear_acceleration,
-        "Gravity"               : sensor.gravity
+        "temperature"           : sensor.temperature,
+        "acceleration"          : sensor.acceleration,
+        "magnetic"              : sensor.magnetic,
+        "gyro"                  : sensor.gyro,
+        "euler"                 : sensor.euler,
+        "quaternion"            : sensor.quaternion,
+        "linear_acceleration"   : sensor.linear_acceleration,
+        "gravity"               : sensor.gravity
 
                 }
+
     if verbose is True:
-        pprint(readings)
-#        print("Temperature: {} degrees C".format(sensor.temperature))
-#        print("Accelerometer (m/s^2): {}".format(sensor.acceleration))
-#        print("Magnetometer (microteslas): {}".format(sensor.magnetic))
-#        print("Gyroscope (rad/sec): {}".format(sensor.gyro))
-#        print("Euler angle: {}".format(sensor.euler))
-#        print("Quaternion: {}".format(sensor.quaternion))
-#        print("Linear acceleration (m/s^2): {}".format(sensor.linear_acceleration))
-#        print("Gravity (m/s^2): {}".format(sensor.gravity))
-#        print()
+        #pprint(readings)
+            print("Temperature: {} degrees C".format(sensor.temperature))
+            print("Accelerometer (m/s^2): {}".format(sensor.acceleration))
+            print("Magnetometer (microteslas): {}".format(sensor.magnetic))
+            print("Gyroscope (rad/sec): {}".format(sensor.gyro))
+            print("Euler angle: {}".format(sensor.euler))
+            print("Quaternion: {}".format(sensor.quaternion))
+            print("Linear acceleration (m/s^2): {}".format(sensor.linear_acceleration))
+            print("Gravity (m/s^2): {}".format(sensor.gravity))
+            print()
 
     return readings
+
 
 def to_json(dict):
     return json.dumps(dict).encode('utf-8')
@@ -65,29 +69,54 @@ def main(output_format='dict',cnt=0):
     except NameError:
         sensor = start_sensor()
 
-    while cnt <= 10:
-        imu_data = read(sensor, verbose=False)
+    imu_data_stamped = {}    # dict. of dicts {timestamp : imu_data}, imu_data is alsp a dict.
 
-        #print('original sensor output')
-        #pprint.pprint(imu_data)
+    while cnt <= 3:
 
-        if output_format=='json':
-            imu_data = to_json(imu_data)
+        try:
+            imu_data = read(sensor, verbose=False)
 
-        #print('returned sensor output')
-        #pprint.pprint(imu_data)
+            print(imu_data.values())
 
-        cnt += 1
+            if '(None, None, None)' in imu_data.values():
+                raise Exception('Nones found')
 
-    time.sleep(0.1)
-    return imu_data
+            elif ('None','None','None','None') in imu_data.values():
+                raise Exception ('Nones found in Quat')
+#            pprint.pprint(imu_data)
+
+        # Getting the current date
+        # and time
+            dt = datetime.datetime.now()
+
+            utc_time = dt.replace(tzinfo = timezone.utc)
+            timestamp = utc_time.timestamp()
+        #print(utc_timestamp))
+
+            imu_data_stamped[timestamp] = imu_data
+#            pprint.pprint(imu_data_stamped)
+
+        #TODO  a while cnt <= loop to gram multiple data sets
+        #TODO add time stamp to the data sets
+        # TODO make dictionary {timestame : imudata}
+        # TODO send that super dataset for processing
+
+            cnt += 1
+
+        except Exception as e:
+            print(e)
+            pass
+
+    if output_format=='json':
+        imu_data_stamped = to_json(imu_data_stamped)
+
+
+   #time.sleep(0.1)
+    return imu_data_stamped
 
 if __name__ == '__main__':
     sensor = start_sensor()
 
     while True:
-        imu_data = read(sensor, verbose=False)
-        #pprint.pprint(imu_data)
-        #print("---")
-        time.sleep(1)
+        main()
 

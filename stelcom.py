@@ -40,9 +40,9 @@ def send_altaz(_az=180, _alt=45):
     r = requests.post(url=URL, params=PARAMS)
     return r
 
-def send_fov(fov=5):
+def send_fov(fov=20):
     URL = "http://localhost:8090/api/main/fov"
-    r = requests.post(url=URL, params={"fov" : 5})
+    r = requests.post(url=URL, params={"fov" : fov})
     return r
 
 if __name__ == '__main__':
@@ -56,8 +56,8 @@ if __name__ == '__main__':
     while True:
         received = client.main()
         #print('Euler angles : ', received['Euler angle'])
-        az = received['Euler angle'][0]
-        alt = received['Euler angle'][1]
+        az = float(received['X'])
+        alt = float(received['y'])
 
         send_altaz(az,alt)
         send_fov()
