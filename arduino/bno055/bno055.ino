@@ -54,8 +54,10 @@ void setup(void)
   */
 
   bno.setExtCrystalUse(true);
-
+/*
   Serial.println("Calibration status values: 0=uncalibrated, 3=fully calibrated");
+*/
+  
 }
 
 /**************************************************************************/

@@ -61,6 +61,7 @@ def read(output_format='dict'):
                     'M_cal'   : s.split('Mag=',-1)[1].split()[0]
                  }
 
+        print('arduno_serial Readings', readings)
 
         except:
             readings = {}
@@ -68,8 +69,7 @@ def read(output_format='dict'):
         if output_format=='json':
                 readings = to_json(readings)
 
-
-    return readings
+        return readings
 
 if __name__ == '__main__':
     r = read()

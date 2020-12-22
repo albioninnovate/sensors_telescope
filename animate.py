@@ -63,6 +63,7 @@ def animate(i):
 
     data = get_data()
 
+
     qW = float(data['qW'])
     qX = float(data['qX'])
     qY = float(data['qY'])
@@ -70,19 +71,19 @@ def animate(i):
 
     angles = quaternion.to_euler(qW, qX, qY, qZ)
 
-    print('data ;', data)
+    print('data =  ', data)
 
-    az_values.append(float(angles['X']))
-    roll_values.append(float(angles['Z']))
-    alt_values.append(float(angles['Y']))
+    az_values.append(float(angles[0]))
+    roll_values.append(float(angles[1]))
+    alt_values.append(float(angles[2]))
 
     plt.cla()
 
     axs[0].plot(x_values, az_values)
-    axs[0].ylabel('Az')
+    plt.ylabel('Az')
 
     axs[1].plot(x_values, roll_values)
-    axs[1].ylabel('Roll')
+    plt.ylabel('Roll')
 
     axs[2].plot(x_values, alt_values)
     plt.ylabel('Alt')
