@@ -13,7 +13,7 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 
-async def handle_echo(reader, writer):
+async def handle_echo(reader, writer, ser):
 
     #n = int(config['DATA']['characters'])
     n = 500000
@@ -24,7 +24,7 @@ async def handle_echo(reader, writer):
 
 #    sensor = bno055.main(output_format='json')
 
-    sensor = arduino_serial.read(output_format='json')
+    sensor = arduino_serial.read(ser, output_format='json')
 
     logging.info('Read sensor')
     #print('sensor', sensor)
@@ -47,6 +47,8 @@ async def handle_echo(reader, writer):
 async def main():
 #   server = await asyncio.start_server(
 #       handle_echo, '192.168.1.39', 8888)
+
+    ser = arduino_serial.start_serial()
 
    server = await asyncio.start_server(
        handle_echo, 'freeside.local', 8888)

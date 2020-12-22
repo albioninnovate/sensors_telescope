@@ -20,11 +20,14 @@ ref ; https://roboticsbackend.com/raspberry-pi-arduino-serial-communication/
 def to_json(dict):
     return json.dumps(dict).encode('utf-8')
 
-
-def read(output_format='dict'):
-    cnt = 0  
+def start_serial():
     ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
     ser.flush()
+
+def read(ser,output_format='dict'):
+    cnt = 0  
+    # ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
+    # ser.flush()
 
     while cnt <=5:
         try:
