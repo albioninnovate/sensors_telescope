@@ -24,7 +24,27 @@ def get_data():
     return received
 
 """
-{'X': '290.8125', 'y': '-2.0000', 'z': '2.8125', 'Sys_cal': '3', 'G_cal': '3', 'A_cal': '1', 'M_cal': '2'}
+
+structure of data from 'bunny.ino':
+  
+{X': '290.8125', 'y': '-2.0000', 'z': '2.8125', 'Sys_cal': '3', 'G_cal': '3', 'A_cal': '1', 'M_cal': '2'}
+
+x - Heading (Azimuth]
+y - (Altitude) 
+z - Pitch (Altitude)  
+
+ /* Board layout:
+         +----------+
+         |         *| RST   PITCH  ROLL  HEADING
+     ADR |*        *| SCL
+     INT |*        *| SDA     ^            /->
+     PS1 |*        *| GND     |            |
+     PS0 |*        *| 3VO     Y    Z-->    \-X
+         |         *| VIN
+         +----------+
+  */
+
+
 """
 
 
@@ -44,11 +64,10 @@ def animate(i):
     print('data ;', data)
 
     az_values.append(float(data['X']))
-    roll_values.append(float(data['y']))
-    alt_values.append(float(data['z']))
+    roll_values.append(float(data['z']))
+    alt_values.append(float(data['y']))
 
     plt.cla()
-
 
     axs[0].plot(x_values, az_values)
     plt.ylabel('Az')
@@ -59,8 +78,7 @@ def animate(i):
     axs[2].plot(x_values, alt_values)
     plt.ylabel('Alt')
 
-
-#ani = FuncAnimation(plt.gcf(), animate, 1000)
+#TODO the labels are not displaying on all three plots, only the last
 
 fig, axs = plt.subplots(3)
 

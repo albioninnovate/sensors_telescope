@@ -57,7 +57,7 @@ if __name__ == '__main__':
         received = client.main()
         #print('Euler angles : ', received['Euler angle'])
         az = float(received['X'])
-        alt = float(received['z'])
+        alt = float(received['y'])
 
         send_altaz(az,alt)
         send_fov()
