@@ -2,7 +2,7 @@ import asyncio
 #import bno055
 import logging
 import configparser
-from raspberrypi import arduino_serial
+import arduino_serial
 
 logging.basicConfig(format='%(asctime)s %(message)s',
                     filename='server.log',
