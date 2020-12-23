@@ -1,6 +1,7 @@
 import requests
 import pprint
 import client
+import math
 
 def get_status(propId=-2, actionId=-2, verbose=False):
     try:
@@ -32,9 +33,15 @@ def send_altaz(_az=180, _alt=45):
     # api-endpoint
     URL = "http://localhost:8090/api/main/view"
 
+# az and alt must be given in radians.
+# -1 to correct for differences in the coor system
+
+    _az_rad = math.radians(_az * -1)
+    _alt_rad = math.radians(_alt  )
+
     # defining a params dict for the
     # parameters to be sent to the API
-    PARAMS = {"az": _az, "alt": _alt}
+    PARAMS = {"az": _az_rad, "alt": _alt_rad}
 
     # sending get request and saving the response as response object
     r = requests.post(url=URL, params=PARAMS)
@@ -57,7 +64,10 @@ if __name__ == '__main__':
         received = client.main()
         #print('Euler angles : ', received['Euler angle'])
         az = float(received['X'])
-        alt = float(received['y'])
+        alt = float(received['Z'])
 
-        send_altaz(az,alt)
-        send_fov()
+        x = 0
+        while x <= 10:
+            send_altaz(az,alt)
+            send_fov(5)
+            x += 1

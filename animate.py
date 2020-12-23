@@ -51,9 +51,19 @@ def get_data():
 
 x_values = []
 
-az_values = []
-roll_values = []
-alt_values = []
+q_az  = []
+q_rol = []
+q_alt = []
+
+e_az  = []
+e_rol = []
+e_alt = []
+
+Sys_cal = []
+G_cal = []
+A_cal = []
+M_cal = []
+
 
 index = count()
 
@@ -63,34 +73,56 @@ def animate(i):
 
     data = get_data()
 
+    print(data)
 
     qW = float(data['qW'])
     qX = float(data['qX'])
     qY = float(data['qY'])
     qZ = float(data['qZ'])
 
-    angles = quaternion.to_euler(qW, qX, qY, qZ)
+    q_angles = quaternion.to_euler(qW, qX, qY, qZ)
 
-    print('data =  ', data)
+    q_az.append(float(q_angles[0]))
+    q_rol.append(float(q_angles[1]))
+    q_alt.append(float(q_angles[2]))
 
-    az_values.append(float(angles[0]))
-    roll_values.append(float(angles[1]))
-    alt_values.append(float(angles[2]))
+
+    e_az.append(float(data['X']))
+    e_rol.append(float(data['Y']))
+    e_alt.append(float(data['Z']))
+
+#    Sys = 0   Gyro = 3 Accel = 0 Mag = 0
+
+    Sys_cal.append(float(data['Sys_cal']))
+    G_cal.append(float(data['G_cal']))
+    A_cal.append(float(data['A_cal']))
+    M_cal.append(float(data['M_cal']))
+
+
 
     plt.cla()
 
-    axs[0].plot(x_values, az_values)
+    axs[0].plot(x_values, q_az,'-g', linewidth=1)
+    axs[0].plot(x_values, e_az, '--c')
     plt.ylabel('Az')
 
-    axs[1].plot(x_values, roll_values)
+    axs[1].plot(x_values, q_rol, '-g', linewidth=1)
+    axs[1].plot(x_values, e_rol,'--c')
     plt.ylabel('Roll')
 
-    axs[2].plot(x_values, alt_values)
+    axs[2].plot(x_values, q_alt, '-g', linewidth=1)
+    axs[2].plot(x_values, e_alt,'--c')
     plt.ylabel('Alt')
+
+    axs[3].plot(x_values, Sys_cal)
+    axs[3].plot(x_values, G_cal)
+    axs[3].plot(x_values, A_cal)
+    axs[3].plot(x_values,  M_cal)
+    plt.ylabel('Cal')
 
 #TODO the labels are not displaying on all three plots, only the last
 
-fig, axs = plt.subplots(3)
+fig, axs = plt.subplots(4)
 
 
 ani = FuncAnimation(fig, animate, 1000)

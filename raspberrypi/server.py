@@ -2,7 +2,7 @@ import asyncio
 #import bno055
 import logging
 import configparser
-import arduino_serial
+import ard_ser
 
 logging.basicConfig(format='%(asctime)s %(message)s',
                     filename='server.log',
@@ -13,7 +13,7 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 
-async def handle_echo(reader, writer, ser):
+async def handle_echo(reader, writer):
 
     #n = int(config['DATA']['characters'])
     n = 500000
@@ -24,7 +24,7 @@ async def handle_echo(reader, writer, ser):
 
 #    sensor = bno055.main(output_format='json')
 
-    sensor = arduino_serial.read(ser, output_format='json')
+    sensor = ard_ser.read(output_format='json')
 
     logging.info('Read sensor')
     #print('sensor', sensor)
@@ -32,7 +32,7 @@ async def handle_echo(reader, writer, ser):
     data = sensor
 
     addr = writer.get_extra_info('peername')
-    logging.info(addr)	
+    logging.info(addr)
 
     print('Received', message, 'from',addr)
 
@@ -47,8 +47,6 @@ async def handle_echo(reader, writer, ser):
 async def main():
 #   server = await asyncio.start_server(
 #       handle_echo, '192.168.1.39', 8888)
-
-    ser = arduino_serial.start_serial()
 
    server = await asyncio.start_server(
        handle_echo, 'freeside.local', 8888)

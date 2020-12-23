@@ -13,23 +13,18 @@ Each line is received in the above structue from the Ardiuno. IT must be striped
 
 ref ; https://roboticsbackend.com/raspberry-pi-arduino-serial-communication/
 
-
-
 """
 
 def to_json(dict):
     return json.dumps(dict).encode('utf-8')
 
-def start_serial():
+
+def read(output_format='dict'):
+    cnt = 0
     ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
     ser.flush()
 
-def read(ser,output_format='dict'):
-    cnt = 0  
-    # ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
-    # ser.flush()
-
-    while cnt <=5:
+    while cnt <=3:
         try:
             if ser.in_waiting > 0:
                 line = ser.readline().decode('utf-8').rstrip()
@@ -42,18 +37,10 @@ def read(ser,output_format='dict'):
         try:
             s = line
 
-# for Euler data :
-#             readings = {
-#                     'X'       : s.split('X:',-1)[1].split()[0],
-#                     'Y'       : s.split('Y:',-1)[1].split()[0],
-#                     'Z'       : s.split('Z:',-1)[1].split()[0],
-#                     'Sys_cal' : s.split('Sys:',-1)[1].split()[0],
-#                     'G_cal'   : s.split('G:',-1)[1].split()[0],
-#                     'A_cal'   : s.split('A:',-1)[1].split()[0],
-#                     'M_cal'   : s.split('M:',-1)[1].split()[0]
-#                  }
-# for Quaternion data
             readings = {
+                     'X'       : s.split('X:',-1)[1].split()[0],
+                     'Y'       : s.split('Y:',-1)[1].split()[0],
+                     'Z'       : s.split('Z:',-1)[1].split()[0],
                     'qW'      : s.split('qW:',-1)[1].split()[0],
                     'qX'      : s.split('qX:',-1)[1].split()[0],
                     'qY'      : s.split('qY:',-1)[1].split()[0],
@@ -64,16 +51,17 @@ def read(ser,output_format='dict'):
                     'M_cal'   : s.split('Mag=',-1)[1].split()[0]
                  }
 
-        print('arduno_serial Readings', readings)
-
         except:
             readings = {}
 
         if output_format=='json':
                 readings = to_json(readings)
 
-        return readings
+
+    return readings
 
 if __name__ == '__main__':
     r = read()
     print(r)
+
+
