@@ -4,6 +4,9 @@ import logging
 import configparser
 import ard_ser
 
+# TODO set this to run when the pi boots
+# TODO combine the log files for server.py and ard_ser.py
+
 logging.basicConfig(format='%(asctime)s %(message)s',
                     filename='server.log',
                     level=logging.DEBUG)

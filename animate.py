@@ -4,9 +4,7 @@ from itertools import count
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import client
-import flatten_dict
-import quaternion
-
+from utils import quaternion
 
 import logging
 
@@ -43,8 +41,6 @@ def get_data():
 
     #print('get data; ',received )
 
-#    received = flatten_dict.main(received)
-
     return received
 
 
@@ -80,6 +76,7 @@ def animate(i):
     qY = float(data['qY'])
     qZ = float(data['qZ'])
 
+#TODO investigae the quaternion value inputs q_angls outputs, they do not agree with the Euler Angles.  The yaw(y) seen to be out of phase 180 degrees. X&Z do not seem correlated.
     q_angles = quaternion.to_euler(qW, qX, qY, qZ)
 
     q_az.append(float(q_angles[0]))

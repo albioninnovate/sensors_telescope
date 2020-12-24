@@ -2,7 +2,10 @@
 import serial
 
 if __name__ == '__main__':
-    ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
+    try:
+        ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
+    except:
+        ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
     ser.flush()
 
     while True:

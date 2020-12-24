@@ -20,10 +20,17 @@ def to_json(dict):
 
 
 def read(output_format='dict'):
-    cnt = 0
-    ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
+
+    try:
+        ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
+
+    except:
+        ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
     ser.flush()
 
+    #TODO if the port is still not found, pass the error to server.py to include in the message sent to the client when a request is made
+
+    cnt = 0
     while cnt <=3:
         try:
             if ser.in_waiting > 0:
