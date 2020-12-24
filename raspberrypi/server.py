@@ -1,5 +1,4 @@
 import asyncio
-#import bno055
 import logging
 import configparser
 import ard_ser
@@ -7,9 +6,12 @@ import ard_ser
 # TODO set this to run when the pi boots
 # TODO combine the log files for server.py and ard_ser.py
 
-logging.basicConfig(format='%(asctime)s %(message)s',
-                    filename='server.log',
-                    level=logging.DEBUG)
+filename='server.log'
+level = 'logging.DEBUG'
+
+logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
+                    filename=filename,
+                    level=level)
 
 # Read config file
 config = configparser.ConfigParser()
@@ -25,8 +27,6 @@ async def handle_echo(reader, writer):
     message = data.decode()
     logging.debug('reader read {}'.format(message) )
 
-#    sensor = bno055.main(output_format='json')
-
     sensor = ard_ser.read(output_format='json')
 
     logging.info('Read sensor')
@@ -38,6 +38,7 @@ async def handle_echo(reader, writer):
     logging.info(addr)
 
     print('Received', message, 'from',addr)
+    logging.info('Received', {}, 'from',{})
 
     print('Send: ' , message)
     writer.write(data)

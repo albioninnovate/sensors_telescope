@@ -40,6 +40,8 @@ The system comprises a BNO055 connected by I2C to an Arduino sending data via a 
 ![image](docs/arch.png)
 
 
+
+
 # Ardunio setup 
 
 ref: https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/arduino-code

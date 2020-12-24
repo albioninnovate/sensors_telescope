@@ -42,16 +42,15 @@ async def tcp_echo_client(message):
     #n = int(config['DATA']['bytes_length'])  # number of bytes to read
     time.sleep(1)  # allow time for the data to be received
     data = await reader.read(500000)
-    logging.debug(data.decode)
-    logging.debug(data)
+
+    logging.debug('data received : {}' .format(data.decode))
 
 
-
+# data is received as a binary from which the dictionary must be extracted
     try:
         data_dict = ast.literal_eval(data.decode())  # extract the dictionary from the string received
- #       data_dict = ast.literal_eval(data)  # extract the dictionary from the string received
 
-        logging.debug(data_dict)
+        logging.debug('data extracted : {}'.format(data_dict))
 
     except Exception as e:
         logging.debug(e)
@@ -61,7 +60,6 @@ async def tcp_echo_client(message):
     finally:
         writer.close()
         logging.info('Close the connection')
-        #print(data_dict)
     return data_dict
 
 
@@ -74,4 +72,4 @@ def main():
     return received
 
 if __name__ == '__main__':
-    main()
+    print(main())

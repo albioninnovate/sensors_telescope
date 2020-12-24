@@ -1,5 +1,14 @@
 import serial
 import json
+import logging
+
+filename='ard_ser.log'
+
+
+logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
+                    filename=filename,
+                    level=logging.DEBUG)
+
 
 """
 This module reads from the serial port and splits the data feed the Ardunino running bno055.ino. 
@@ -9,9 +18,8 @@ being sent carefully.
 quaternion data line structure: 
 qW: 0.7653 qX: -0.0292 qY: -0.0126 qZ: 0.6429		Sys=3 Gyro=3 Accel=0 Mag=3
 
-Each line is received in the above structue from the Ardiuno. IT must be striped and put in a dictionary structure 
+Each line is received in the above structure from the Ardiuno. IT must be striped and put in a dictionary structure 
 
-ref ; https://roboticsbackend.com/raspberry-pi-arduino-serial-communication/
 
 """
 
@@ -21,16 +29,30 @@ def to_json(dict):
 
 def read(output_format='dict'):
 
+    """
+    This module runs on the Raspberrypi. It reads binary data from the serial port. Expects data from an
+    Ardunio running arduino/bno055/bno055.ino sketch. Parses the decoded data into a dictionary with expected keys.
+    Optionally, the data can be converted to json for sending to a client by raspberrypi/server.py
+
+    Baud rate is dictated by the seed of the connection with the Ardunio. The baud rates must match.
+
+
+    :param output_format: dict, or json,  default is dict
+    :return: data as either dict of json
+    """
+
     try:
         ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
 
     except:
         ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
+
     ser.flush()
 
     #TODO if the port is still not found, pass the error to server.py to include in the message sent to the client when a request is made
 
     cnt = 0
+#  three samples are taken from the port to ensure a complete packet is received with valid data
     while cnt <=3:
         try:
             if ser.in_waiting > 0:
@@ -58,7 +80,8 @@ def read(output_format='dict'):
                     'M_cal'   : s.split('Mag=',-1)[1].split()[0]
                  }
 
-        except:
+        except Exception as e:
+            logging.debug(e)
             readings = {}
 
         if output_format=='json':
@@ -70,5 +93,3 @@ def read(output_format='dict'):
 if __name__ == '__main__':
     r = read()
     print(r)
-
-
