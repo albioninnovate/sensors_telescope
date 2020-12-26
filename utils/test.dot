@@ -4,7 +4,7 @@ digraph {
 	subgraph cluster_Arduino {
 		color=blue;
 		node [style=filled];
-		"Bunny.ino" ;
+		"bno055.ino" ;
 		label = "Ardunio";
 		}
 
@@ -15,18 +15,17 @@ digraph {
 		label = "Raspberry Pi";
 		}
 
-
 	subgraph cluster_Laptop {
 		color=green;
 		node [style=filled];
 		"Client.py"->"Animate.py", "Stelcom.py";
-		"Stellariutm", "flattend.py";
+		"Stellariutm";
 		label = "Laptop";
 		}
 
-	BNO055 -> "Bunny.ino"
+	BNO055 -> "bno055.ino"
 	BNO055 [shape=square]
-	"Bunny.ino" -> "ardunio_serial.py" [taillabel = "Serial Print", headlabel = "I2C"]
+	"bno055.ino" -> "ardunio_serial.py" [taillabel = "Serial Print", headlabel = "I2C"]
 	"server.py" ->"Client.py" [taillabel="asyncio", label = "wifi", headlabel = "asyncio" ]
 	"Stelcom.py"-> "Stellariutm"[taillabel = "post", arrowhead = diamond]
 	"ardunio_serial.py"->"server.py"

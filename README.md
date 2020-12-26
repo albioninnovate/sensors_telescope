@@ -48,23 +48,33 @@ ref: https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/ardu
 
 an Arduno Mega was used for prototyping and in the future is a possibility for driving motors.  To connect the assembled BNO055 breakout to an Arduino
 
-## Arduino Mega 
-    SCL - 21 
-    SDA - 20
-    VIN - 5v
-    GND - GND
+
+Pinouts:
+
+| BNO055       | Arduino Mega     | Arduino Nano     |
+| :------------- | :----------: | -----------: |
+|  SCL | 21  | A5 |
+| SDA  | 20 | A4 |
+| VIN  | 5v | VIN |
+| GND  | GND | GND |
 
 
 for mounting on the telescope the smaller form factor of a nano has advantages. 
 
-## Arduino Nano
-    SCL - A5
-    SDA - A4
-    VIN - VIN
-    GND - GND
 
-see the Adafruit instructions for the necessary libraries.  The sketch is here arduino/bno055/bno055.ino.  Note the directory 'bno055' is needed by the Arduino IDE, do not remove it.
+See the Adafruit instructions for the necessary libraries.  The sketch is here arduino/bno055/bno055.ino.  Note the directory 'bno055' is needed by the Arduino IDE, do not remove it.
 
-# TODO Add photos ao wiring between Arduino and sensor  boards 
+
+TODO
+-Add photos of wiring between Arduino and sensor  boards 
+-Design a case for mounting the sensor and Ardunio to the telescope.
+    - damp proof
+    - mount to align struts of telescope with all axis of sensors
+    - cable management, single cable that doe not interfere with AZ/Alt movement of telescope tube. 
+    - must be removable in the field
+    - must not protrude out of the circumference of the telescope frame 
+    - should be far from metallic and electronic components of the telescope (struts)
+    - placement on the telesope must be movable with the mounting cage
+    - reset button and LEDs must be accessible /viable ( ideally LED only visible looking directly into board, so ambient light noise  is kept to min  ) 
 
 
