@@ -77,7 +77,7 @@ def animate(i):
     qY = float(data['qY'])
     qZ = float(data['qZ'])
 
-#TODO investigae the quaternion value inputs q_angls outputs, they do not agree with the Euler Angles.  The yaw(y) seen to be out of phase 180 degrees. X&Z do not seem correlated.
+#TODO investigate the quaternion value inputs q_angls outputs, they do not agree with the Euler Angles.  The yaw(y) seen to be out of phase 180 degrees. X&Z do not seem correlated.
     q_angles = quaternion.to_euler(qW, qX, qY, qZ)
 
     q_az.append(float(q_angles[0]))

@@ -30,6 +30,42 @@ The Euler angles output it from the sensor seem to be quite stable and correspon
 
 When the Euler angles are sent Stellarium they must first be inverted by multiplying by -1 and then converting into radians 
 
+## Python Choice 
+
+Python 3.8 is used in order to access asyncio functions.
+
+An installation was created here:
+```
+/home/pi/Python-3.8.5
+```
+
+There are two installations of Python on this Raspberry Pi 3.5 is the standard which can be accessed by  $ python <>.py.  There is also an installation of Python 3.8 (home/pi/Python-3.8.5 which can be accessed with python38. <>.py.  The alias of this second installation is controlled in bashrc.
+```
+sudo nano /home/pi/.bashrc
+```
+
+
+the following line was added at the end of the file: 
+```
+alias python38="/home/pi/Python-3.8.5/python"
+```
+
+
+
+The reason for doing this was to access functionality in the asyncio package, specifically the. run method of that package. Running under early versions of python causes this error: 
+
+AttributeError: module 'asyncio' has no attribute 'run'
+
+### Installing packages 
+Installing packages to this alternative python can be done via pip specifying  python38.
+```
+python38 -m pip install adafruit-circuitpython-bno055
+```
+
+
+
+
+
 ## Information flow
 
 It is anticipated that the information produced by the sensor will be used for more than one application for example; direct display at the telescope, feedback to the positioning system and sending orientation information to external programmes like Stellarium.  To accommodate this a architecture which allowed the sensor to continually produce data that could be requested by various clients.  
@@ -64,8 +100,15 @@ for mounting on the telescope the smaller form factor of a nano has advantages.
 
 See the Adafruit instructions for the necessary libraries.  The sketch is here arduino/bno055/bno055.ino.  Note the directory 'bno055' is needed by the Arduino IDE, do not remove it.
 
+# Server
 
-TODO
+see: raspberrypi/README_server.md
+
+
+
+
+
+# TODO
 -Add photos of wiring between Arduino and sensor  boards 
 -Design a case for mounting the sensor and Ardunio to the telescope.
     - damp proof

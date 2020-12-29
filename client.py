@@ -32,7 +32,7 @@ def stat_config():
 async def tcp_echo_client(message):
 
     #ip_addr = config['ADDRESS']['ip_addr']
-    reader, writer = await asyncio.open_connection( '192.168.1.21', 8888)
+    reader, writer = await asyncio.open_connection( '192.168.1.41', 8888)
     logging.debug('create reader and writer')
 
     #print(f'Send: {message!r}')
@@ -68,7 +68,7 @@ def main():
     stat_config()
     received  = asyncio.run(tcp_echo_client('data pls, Thk you'))
     #print('received by client')
-    #pprint.pprint(received)
+    pprint.pprint(received)
     return received
 
 if __name__ == '__main__':

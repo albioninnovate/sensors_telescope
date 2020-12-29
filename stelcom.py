@@ -26,9 +26,14 @@ def get_status(propId=-2, actionId=-2, verbose=False):
 
 # https://stellarium.org/doc/head/remoteControlApi.html
 
-def send_altaz(_az=180, _alt=45):
-#_az = 180
-#_alt = 45
+def send_altaz(_az=0, _alt=0):
+
+    """
+
+    :param _az:   In radians
+    :param _alt:  In radians
+    :return:
+    """
 
     # api-endpoint
     URL = "http://localhost:8090/api/main/view"
@@ -36,12 +41,10 @@ def send_altaz(_az=180, _alt=45):
 # az and alt must be given in radians.
 # -1 to correct for differences in the coor system
 
-    _az_rad = math.radians(_az * -1)
-    _alt_rad = math.radians(_alt  )
 
     # defining a params dict for the
     # parameters to be sent to the API
-    PARAMS = {"az": _az_rad, "alt": _alt_rad}
+    PARAMS = {"az": _az, "alt": _alt}
 
     # sending get request and saving the response as response object
     r = requests.post(url=URL, params=PARAMS)
@@ -63,11 +66,18 @@ if __name__ == '__main__':
     while True:
         received = client.main()
         #print('Euler angles : ', received['Euler angle'])
+
         az = float(received['X'])
         alt = float(received['Z'])
 
+
+        az_rad  = - math.radians(az) - math.pi
+        alt_rad = - math.radians(alt)
+
+        print("Az/Alt : ", az_rad, ' / ', alt_rad)
+
         x = 0
-        while x <= 10:
-            send_altaz(az,alt)
-            send_fov(5)
+        while x <= 1:
+            send_altaz(az_rad, alt_rad)
+            send_fov(40)
             x += 1

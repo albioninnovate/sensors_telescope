@@ -43,9 +43,11 @@ def read(output_format='dict'):
 
     try:
         ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
+        logging.debug('/dev/ttyACM0')
 
     except:
         ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
+        #logging.debug('/dev/ttyUSB0')
 
     ser.flush()
 
@@ -53,13 +55,16 @@ def read(output_format='dict'):
 
     cnt = 0
 #  three samples are taken from the port to ensure a complete packet is received with valid data
-    while cnt <=3:
+
+
+    # while readings == {} :
+    #while cnt <=10:
+    while True:
+        readings = {}
         try:
             if ser.in_waiting > 0:
                 line = ser.readline().decode('utf-8').rstrip()
                 print(line)
-                cnt += 1
-
         except:
            pass
 
@@ -82,14 +87,19 @@ def read(output_format='dict'):
 
         except Exception as e:
             logging.debug(e)
-            readings = {}
 
-        if output_format=='json':
+        if 'X' in readings.keys():
+            if output_format == 'json':
                 readings = to_json(readings)
+            return readings
+
+         #   cnt += 1
 
 
-    return readings
+
+
 
 if __name__ == '__main__':
-    r = read()
-    print(r)
+    while True:
+        r = read()
+        print(r)

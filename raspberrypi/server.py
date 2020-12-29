@@ -38,7 +38,7 @@ async def handle_echo(reader, writer):
     logging.info(addr)
 
     print('Received', message, 'from',addr)
-    logging.info('Received', {}, 'from',{})
+    #logging.info('Received', {}, 'from', addr)
 
     print('Send: ' , message)
     writer.write(data)
