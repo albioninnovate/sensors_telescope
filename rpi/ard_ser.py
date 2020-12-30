@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import serial
 import json
 import logging
@@ -68,6 +70,7 @@ def read(output_format='dict'):
         except:
            pass
 
+
         try:
             s = line
 
@@ -89,14 +92,12 @@ def read(output_format='dict'):
             logging.debug(e)
 
         if 'X' in readings.keys():
-            if output_format == 'json':
-                readings = to_json(readings)
-            return readings
+            if int(readings['Sys_cal']) != 0:
+                if output_format == 'json':
+                    readings = to_json(readings)
+                return readings
 
          #   cnt += 1
-
-
-
 
 
 if __name__ == '__main__':

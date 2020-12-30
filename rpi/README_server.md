@@ -23,13 +23,13 @@ The server is at this location in the repository to allow ready maintenance:
 home/pi/code/sensors_telescope/raspberrypi/server.py
 ```
 
-systemd is used to manage the startup process.  systems is configured in a 'unit file'
+systemd is used to manage the startup process.  Systems is configured in a 'unit file'
 
 ``` 
- sudo nano /lib/systemd/system/myscript.service
+ sudo nano /lib/systemd/system/server.service
  ```
 
-this porject uses the python3.8 in order to acess the asyncio features (TODO add reference to main README.md)
+this project uses the python3.8 in order to access the asyncio features (TODO add reference to main README.md)
 
 
 Add in the following text :
@@ -40,7 +40,7 @@ Add in the following text :
 
  [Service]
  Type=idle
- ExecStart=/home/pi/Python-3.8.5/python home/pi/code/sensors_telescope/raspberrypi/server.py > home/pi/code/sensors_telescope/raspberrypi/server.log 2>&1
+ ExecStart=/home/pi/Python-3.8.5/python /home/pi/code/sensors_triscope/rpi/server.py > /home/pi/code/sensors_triscope/rpi/server.log 2>&1
 
  [Install]
  WantedBy=multi-user.target
@@ -55,17 +55,17 @@ ExecStart=/home/pi/Python-3.8.5/python home/pi/code/sensors_telescope/raspberryp
 
 The permission on the unit file needs to be set to 644 :
 ```
-sudo chmod 644 /lib/systemd/system/myscript.service
+sudo chmod 644 /lib/systemd/system/server.service
 ```
 
 
-Step 3 – Configure systemd
+Configure systemd
 
 Now the unit file has been defined we can tell systemd to start it during the boot sequence :
 
 ``` 
  sudo systemctl daemon-reload
- sudo systemctl enable myscript.service
+ sudo systemctl enable server.service
  ```
 
 
@@ -75,7 +75,14 @@ sudo reboot
 
 The status of the server can be checked with:
  ```
- sudo systemctl status myscript.service
+ sudo systemctl status server.service
  
  sudo systemctl status /home/pi/Python-3.8.5/python home/pi/code/sensors_telescope/raspberrypi/server.py 
  ```
+
+
+### Troubleshooting 
+
+
+
+sudo -H pip3 install serial -t /home/pi/Python-3.8.5

@@ -102,7 +102,8 @@ See the Adafruit instructions for the necessary libraries.  The sketch is here a
 
 # Server
 
-see: raspberrypi/README_server.md
+see: 
+    rpi/README_server.md
 
 
 
