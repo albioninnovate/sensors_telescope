@@ -4,12 +4,12 @@ import serial
 import json
 import logging
 
-filename='ard_ser.log'
-
-
-logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
-                    filename=filename,
-                    level=logging.DEBUG)
+# filename='ard_ser.log'
+#
+#
+# logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
+#                     filename=filename,
+#                     level=logging.DEBUG)
 
 
 """
@@ -45,7 +45,7 @@ def read(output_format='dict'):
 
     try:
         ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
-        logging.debug('/dev/ttyACM0')
+        # logging.debug('/dev/ttyACM0')
 
     except:
         ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
@@ -53,51 +53,41 @@ def read(output_format='dict'):
 
     ser.flush()
 
-    #TODO if the port is still not found, pass the error to server.py to include in the message sent to the client when a request is made
-
-    cnt = 0
-#  three samples are taken from the port to ensure a complete packet is received with valid data
-
-
-    # while readings == {} :
-    #while cnt <=10:
     while True:
         readings = {}
         try:
             if ser.in_waiting > 0:
                 line = ser.readline().decode('utf-8').rstrip()
-                print(line)
-        except:
-           pass
+                #print(line)
 
+                s = line
 
-        try:
-            s = line
-
-            readings = {
-                     'X'       : s.split('X:',-1)[1].split()[0],
-                     'Y'       : s.split('Y:',-1)[1].split()[0],
-                     'Z'       : s.split('Z:',-1)[1].split()[0],
-                    'qW'      : s.split('qW:',-1)[1].split()[0],
-                    'qX'      : s.split('qX:',-1)[1].split()[0],
-                    'qY'      : s.split('qY:',-1)[1].split()[0],
-                    'qZ'      : s.split('qZ:', -1)[1].split()[0],
-                    'Sys_cal' : s.split('Sys=',-1)[1].split()[0],
-                    'G_cal'   : s.split('Gyro=',-1)[1].split()[0],
-                    'A_cal'   : s.split('Accel=',-1)[1].split()[0],
-                    'M_cal'   : s.split('Mag=',-1)[1].split()[0]
+                readings = {
+                         'X'       : s.split('X:',-1)[1].split()[0],
+                         'Y'       : s.split('Y:',-1)[1].split()[0],
+                         'Z'       : s.split('Z:',-1)[1].split()[0],
+                        'qW'      : s.split('qW:',-1)[1].split()[0],
+                        'qX'      : s.split('qX:',-1)[1].split()[0],
+                        'qY'      : s.split('qY:',-1)[1].split()[0],
+                        'qZ'      : s.split('qZ:', -1)[1].split()[0],
+                        'Sys_cal' : s.split('Sys=',-1)[1].split()[0],
+                        'G_cal'   : s.split('Gyro=',-1)[1].split()[0],
+                        'A_cal'   : s.split('Accel=',-1)[1].split()[0],
+                        'M_cal'   : s.split('Mag=',-1)[1].split()[0]
                  }
 
         except Exception as e:
             logging.debug(e)
+            print(e)
+            pass
 
         if 'X' in readings.keys():
-            if int(readings['Sys_cal']) != 0:
+            s = float(readings['Sys_cal'])
+            # if s >= 2 or float(readings['G_cal']) >= 1 or float(readings['M_cal'] >= 1):
+            if s >= 0:
                 if output_format == 'json':
                     readings = to_json(readings)
                 return readings
-
-         #   cnt += 1
 
 
 if __name__ == '__main__':

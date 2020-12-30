@@ -8,14 +8,14 @@ from utils import quaternion
 import csv
 
 import logging
-
-log_file = 'animate.log'
-
-logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
-                    filename=log_file,
-                    level=logging.DEBUG)
-
-
+#
+# log_file = 'animate.log'
+#
+# logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
+#                     filename=log_file,
+#                     level=logging.DEBUG)
+#
+#
 
 
 """
@@ -38,7 +38,7 @@ def get_data():
     :return:
     """
     received = client.main()
-    logging.debug(received)
+    # logging.debug(received)
 
     #print('get data; ',received )
 

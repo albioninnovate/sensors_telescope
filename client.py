@@ -71,7 +71,7 @@ def main():
     stat_config()
     received  = asyncio.run(tcp_echo_client('data pls, Thk you'))
     #print('received by client')
-    pprint.pprint(received)
+    #pprint.pprint(received)
     return received
 
 if __name__ == '__main__':

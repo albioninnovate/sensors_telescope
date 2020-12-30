@@ -6,14 +6,8 @@ from matplotlib.animation import FuncAnimation
 import client
 from utils import quaternion
 import csv
+import math
 
-import logging
-
-log_file = 'animate.log'
-
-logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
-                    filename=log_file,
-                    level=logging.DEBUG)
 
 
 
@@ -36,9 +30,6 @@ def get_data():
     :return:
     """
     received = client.main()
-    logging.debug(received)
-
-    #print('get data; ',received )
 
     return received
 
@@ -50,14 +41,33 @@ def animate(i):
 
     data = get_data()
 
-    print(data)
+    e_az_new = float(data['X'])
+    Sys_cal_new = float(data['Sys_cal'])
 
-    e_az.append(float(data['X']))
-    Sys_cal.append(float(data['Sys_cal']))
+    print(data['X']
+          ," , ",
+          data['Sys_cal']
+          )
 
-    plt.cla()
+    e_az_new = math.radians(e_az_new)
+    Sys_cal_new = math.radians(Sys_cal_new)
 
-    axs.plot(e_az,Sys_cal ,'ro')
+    # Add the new point to the list
+    e_az.append(e_az_new )
+    Sys_cal.append(Sys_cal_new )
+
+    # Take the last few points to plot
+    N = 5
+    e = e_az[-N:]
+    S = Sys_cal[-N:]
+
+    plt.cla()  # Clear the ole points from the plot
+
+    # rotate the axes to match a compass
+    axs.set_theta_zero_location('N')
+    axs.set_theta_direction(-1)
+
+    axs.plot(e, S, 'ro')
 
 #TODO the labels are not displaying on all three plots, only the last
 
