@@ -24,7 +24,7 @@ config.read('config.ini')
 async def handle_echo(reader, writer):
 
     #n = int(config['DATA']['characters'])
-    n = 500000
+    n = 1000
     data = await reader.read(n)
 
     message = data.decode()

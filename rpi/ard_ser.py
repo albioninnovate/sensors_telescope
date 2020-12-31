@@ -83,7 +83,6 @@ def read(output_format='dict'):
 
         if 'X' in readings.keys():
             s = float(readings['Sys_cal'])
-            # if s >= 2 or float(readings['G_cal']) >= 1 or float(readings['M_cal'] >= 1):
             if s >= 0:
                 if output_format == 'json':
                     readings = to_json(readings)

@@ -44,7 +44,7 @@ async def tcp_echo_client(message):
 
     #n = int(config['DATA']['bytes_length'])  # number of bytes to read
     time.sleep(1)  # allow time for the data to be received
-    data = await reader.read(500000)
+    data = await reader.read(1000)
 
     logging.debug('data received : {}' .format(data.decode))
 
