@@ -12,18 +12,9 @@ import adafruit_character_lcd.character_lcd as characterlcd
 # Modify this if you have a different sized character LCD
 lcd_columns = 16
 lcd_rows = 2
-"""
-# Metro M0/M4 Pin Config:
-lcd_rs = digitalio.DigitalInOut(board.D7)
-lcd_en = digitalio.DigitalInOut(board.D8)
-lcd_d7 = digitalio.DigitalInOut(board.D12)
-lcd_d6 = digitalio.DigitalInOut(board.D11)
-lcd_d5 = digitalio.DigitalInOut(board.D10)
-lcd_d4 = digitalio.DigitalInOut(board.D9)
-lcd_backlight = digitalio.DigitalInOut(board.D13) """
+
 
 # Pico Pin Config:
-
 lcd_rs = digitalio.DigitalInOut(board.GP8)
 lcd_en = digitalio.DigitalInOut(board.GP9)
 lcd_d7 = digitalio.DigitalInOut(board.GP13)
