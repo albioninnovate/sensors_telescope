@@ -1,5 +1,13 @@
+# Reads BNO055  9DoF IMU and sends Orentation (Euler angles) data over USB and to a LCD display.  
+# The LCD display is independent of the USB connection so the orentation data can be read with 
+# only power to the board. 
+
+# Runs under Circuit Python on PICO Raspberrypi
+
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
+
+#Copyright 2021 Ward Hills 
 
 import time
 import board
@@ -88,24 +96,41 @@ while True:
 #    print("Gravity (m/s^2): {}".format(sensor.gravity))
 #    print()
 
-
+#send the data over the serial (USB) port
     print('X:',sensor.euler[0], '  Y:',sensor.euler[1], '  Z:',sensor.euler[2])
 
+# send the data to the lcd screen
+# the LCD screen is connected directly to the microcontroller board so that when powered it can be used with out the Pi
     # Turn backlight on
     lcd.backlight = True
     # Print a two line message
     #lcd.message = "Hello\nCircuitPython"
     nl = "\n"
 
+# average the values before displaying
+    cnt=1
+    n = 100         # number of samples to average 
+    az_list = []
+    alt_list = []
+
+    while cnt <= n+1:
+        az_list.append(sensor.euler[0])
+        alt_list.append(sensor.euler[1])
+        cnt +=1
+    az_ave  = sum(az_list)/n
+    alt_ave = sum(alt_list)/n
+
     #az = str(sensor.euler[0])
     #alt = str(sensor.euler[1])
     #lcd.message =az+nl+alt
 
-    #change to deg min and sec
-    az_dms = decdeg2dms(sensor.euler[0])
+#change to deg min and sec
+    #az_dms = decdeg2dms(sensor.euler[0])   #use this to display raw data , no average  
+    az_dms = decdeg2dms(az_ave)
     az =  str(az_dms[0])+" "+str(az_dms[1])+" "+str(az_dms[2])
 
-    alt_dms = decdeg2dms(sensor.euler[1])
+    #alt_dms = decdeg2dms(sensor.euler[1])  #use this to display raw data , no average 
+    alt_dms = decdeg2dms(alt_ave)
     alt =  str(alt_dms[0])+" "+str(alt_dms[1])+" "+str(alt_dms[2])
 
     lcd.message =az+nl+alt
