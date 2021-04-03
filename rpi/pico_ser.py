@@ -2,20 +2,12 @@
 
 import serial
 import json
-import logging
-
-# filename='ard_ser.log'
-#
-#
-# logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
-#                     filename=filename,
-#                     level=logging.DEBUG)
-
 
 """
-This module reads from the serial port and splits the data feed the Ardunino running bno055.ino. 
-bno055.ino can return all or selected parts of the data produced by the sensor.  Note both the data and structure 
-being sent carefully.  
+This module reads from the serial port and splits the data feed the RasberryPi PICO running a version of pico/bno055.py in this repo 
+bno055.py can return many or selected parts of the data produced by the sensor.  
+
+Note both the data and structure being sent carefully.  
 
 quaternion data line structure: 
 qW: 0.7653 qX: -0.0292 qY: -0.0126 qZ: 0.6429		Sys=3 Gyro=3 Accel=0 Mag=3
@@ -42,17 +34,19 @@ def read(output_format='dict'):
     :param output_format: dict, or json,  default is dict
     :return: data as either dict of json
     """
+    
+    # TODO improve the identification of the serial port
 
     try:
         #ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
         ser = serial.Serial('/dev/ttyACM1', 115200, timeout=1)
-        # logging.debug('/dev/ttyACM0')
+
 
     except:
         #ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
         #ser = serial.Serial('/dev/ttyACM1', 115200, timeout=1)
         ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
-        #logging.debug('/dev/ttyUSB0')
+
 
     ser.flush()
 
@@ -64,8 +58,6 @@ def read(output_format='dict'):
                 #print(line)
 
                 s = line
-                
-                #print(s)
 
                 # readings = {
                          # 'X'       : s.split('X:',-1)[1].split()[0],
@@ -88,8 +80,6 @@ def read(output_format='dict'):
                          'Z'       : s.split('Z:',-1)[1].split()[0]
                  }
                  
-                #print(readings)
-                #print(output_format)
                 
                 if output_format == 'json':
                     #print('jason')
@@ -101,14 +91,6 @@ def read(output_format='dict'):
             logging.debug(e)
             print(e)
             pass
-
-        # ~ if 'X' in readings.keys():
-            # ~ s = float(readings['Sys_cal'])
-            # ~ if s >= 0:
-                # ~ if output_format == 'json':
-                    # ~ readings = to_json(readings)
-                # ~ return readings
-    
 
 
 if __name__ == '__main__':
