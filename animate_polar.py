@@ -34,22 +34,21 @@ def get_data():
     return received
 
 e_az  = []
-e_alt =[]
+e_alt = []
 Sys_cal = []
 
 def animate(i):
 
     data = get_data()
+    print(data)
 
     e_az_new = float(data['X'])
     e_alt_new = float(data['Z'])
-    Sys_cal_new = float(data['Sys_cal'])
+    #Sys_cal_new = float(data['Sys_cal'])
 
     print(data['X'],
           " , ",
-          data['Z'],
-          " , ",
-          data['Sys_cal']
+          data['Z']
           )
 
     e_az_new = math.radians(e_az_new)
@@ -58,13 +57,13 @@ def animate(i):
     # Add the new point to the list
     e_az.append(e_az_new )
     e_alt.append(e_alt_new)
-    Sys_cal.append(Sys_cal_new )
+    #Sys_cal.append(Sys_cal_new )
 
     # Take the last few points to plot
     N = 5
     az = e_az[-N:]
     alt = e_alt[-N:]
-    S = Sys_cal[-N:]
+    #S = Sys_cal[-N:]
 
     axs[0].set_rmax(3)
     axs[0].set_rticks([2])
@@ -89,9 +88,10 @@ def animate(i):
     axs[0].set_theta_zero_location('N')
     axs[0].set_theta_direction(-1)
 
-
-    axs[0].plot(az, S, 'go')
-    axs[1].plot(alt, S, 'ro')
+    S = 2
+    print(az)
+    axs[0].plot(az[0], S, 'go')
+    axs[1].plot(alt[0], S, 'ro')
 
 
 

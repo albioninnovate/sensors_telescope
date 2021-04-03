@@ -35,7 +35,8 @@ def stat_config():
 async def tcp_echo_client(message):
 
     #ip_addr = config['ADDRESS']['ip_addr']
-    reader, writer = await asyncio.open_connection( '192.168.1.41', 8888)
+   # reader, writer = await asyncio.open_connection( '192.168.1.41', 8888)
+    reader, writer = await asyncio.open_connection('10.0.252.60', 8888)
     logging.debug('create reader and writer')
 
     #print(f'Send: {message!r}')
