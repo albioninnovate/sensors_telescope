@@ -44,8 +44,8 @@ def read(output_format='dict'):
     """
 
     try:
-        ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
-        #ser = serial.Serial('/dev/ttyACM1', 115200, timeout=1)
+        #ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
+        ser = serial.Serial('/dev/ttyACM1', 115200, timeout=1)
         # logging.debug('/dev/ttyACM0')
 
     except:

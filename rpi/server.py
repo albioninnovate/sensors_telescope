@@ -4,7 +4,9 @@
 import asyncio
 import logging
 import configparser
-import ard_ser
+#import ard_ser
+import pico_ser
+
 
 # TODO set this to run when the pi boots
 # TODO combine the log files for server.py and ard_ser.py
@@ -30,7 +32,8 @@ async def handle_echo(reader, writer):
     message = data.decode()
     # logging.debug('reader read {}'.format(message) )
 
-    sensor = ard_ser.read(output_format='json')
+    #sensor = ard_ser.read(output_format='json')
+    sensor = pico_ser.read(output_format='json')
 
     # logging.info('Read sensor')
     #print('sensor', sensor)
@@ -55,8 +58,10 @@ async def main():
 #   server = await asyncio.start_server(
 #       handle_echo, '192.168.1.39', 8888)
 
+#    server = await asyncio.start_server(
+#        handle_echo, 'freeside.local', 8888)
    server = await asyncio.start_server(
-       handle_echo, 'freeside.local', 8888)
+       handle_echo, '10.0.252.60', 8888)
 
    addr = server.sockets[0].getsockname()
    print('Serving on ', addr)
