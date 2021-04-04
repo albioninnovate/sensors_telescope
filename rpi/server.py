@@ -27,11 +27,10 @@ async def handle_echo(reader, writer):
 
     #n = int(config['DATA']['characters'])
     #n = 1000  # works but slow
-    n = 250
+    n = 100
     data = await reader.read(n)
 
     message = data.decode()
-    # logging.debug('reader read {}'.format(message) )
 
     #sensor = ard_ser.read(output_format='json')
     sensor = pico_ser.read(output_format='json')
@@ -42,10 +41,10 @@ async def handle_echo(reader, writer):
     data = sensor
 
     addr = writer.get_extra_info('peername')
-    # logging.info(addr)
+    
 
     print('Received', message, 'from',addr)
-    #logging.info('Received', {}, 'from', addr)
+   
 
     print('Send: ' , message)
     writer.write(data)
@@ -53,22 +52,23 @@ async def handle_echo(reader, writer):
 
     print("Close the connection")
     writer.close()
-    # logging.info('Closed connection')
+    
 
 async def main():
 #   server = await asyncio.start_server(
 #       handle_echo, '192.168.1.39', 8888)
 
-#    server = await asyncio.start_server(
-#        handle_echo, 'freeside.local', 8888)
-   server = await asyncio.start_server(
-       handle_echo, '10.0.252.60', 8888)
 
-   addr = server.sockets[0].getsockname()
-   print('Serving on ', addr)
-   # logging.info('Server started on {}'.format(addr))
+    server = await asyncio.start_server(
+        handle_echo, 'devpi.local', 8888)
 
-   async with server:
+#   server = await asyncio.start_server(
+#       handle_echo, '10.0.252.60', 8888)
+
+    addr = server.sockets[0].getsockname()
+    print('Serving on ', addr)
+
+    async with server:
         await server.serve_forever()
 
 asyncio.run(main())
