@@ -1,5 +1,11 @@
 
 
+"""
+This software reads from the client
+
+
+"""
+
 
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -21,8 +27,10 @@ Sys_cal = []
 
 def animate(i):
 
-    data = get_data()
-    #print(data)
+    try:
+        data = get_data()
+    except:
+        print('data not received')
 
     e_az_new = float(data['X'])
     e_alt_new = float(data['Z'])
@@ -30,15 +38,11 @@ def animate(i):
     # The plot will use the calibration value as the vector length in the polar plot.  In the circuit python version of
     # pico_ser.py, running the on the, PICO board does not return thee calibration value.
 
-    if data['Sys_cal'] is None:          # this will be the case util circuitpython surfaces the calibrations values
+    if len(data) <= 3 :          # this will be the case util circuitpython surfaces the calibrations values
         Sys_cal_new = 3
+        msg = 'Calibration data not received'
     else:
         Sys_cal_new = float(data['Sys_cal'])
-
-    print(data['X'],
-          " , ",
-          data['Z']
-          )
 
     e_az_new = math.radians(e_az_new)
     e_alt_new = math.radians((e_alt_new))  * -1
@@ -75,11 +79,10 @@ def animate(i):
     axs[0].set_theta_zero_location('N')
     axs[0].set_theta_direction(-1)
 
-    #S = [3,3,3,3]
-    print(az)
     axs[0].plot(az, S, 'go')
     axs[1].plot(alt, S, 'ro')
 
+    axs[0].set
 
 fig, axs = plt.subplots(1,2, subplot_kw={'projection': 'polar'})
 

@@ -35,9 +35,9 @@ async def tcp_echo_client(message):
     writer.write(message.encode())
 
     #n = int(config['DATA']['bytes_length'])  # number of bytes to read
-    time.sleep(0.5)  # allow time for the data to be received
+    time.sleep(0.2)  # allow time for the data to be received
     #n = 1000 #  works but slow
-    n = 250
+    n = 100
     data = await reader.read(n)
 
 # data is received as a binary from which the dictionary must be extracted
