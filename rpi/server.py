@@ -26,7 +26,8 @@ config.read('config.ini')
 async def handle_echo(reader, writer):
 
     #n = int(config['DATA']['characters'])
-    n = 1000
+    #n = 1000  # works but slow
+    n = 250
     data = await reader.read(n)
 
     message = data.decode()

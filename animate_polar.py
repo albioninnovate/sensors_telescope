@@ -1,28 +1,10 @@
-# python_live_plot.py
 
-from itertools import count
+
+
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import client
-from utils import quaternion
-import csv
 import math
-
-
-
-
-
-"""
-
-structure of data from 'bno055.ino':
-
-Euler values data structure:
-{X': '290.8125', 'y': '-2.0000', 'z': '2.8125', 'Sys_cal': '3', 'G_cal': '3', 'A_cal': '1', 'M_cal': '2'}
-
-quaternion data structure: 
-qW: 0.7653 qX: -0.0292 qY: -0.0126 qZ: 0.6429		Sys=3 Gyro=3 Accel=0 Mag=3
-
-"""
 
 
 def get_data():
@@ -40,11 +22,18 @@ Sys_cal = []
 def animate(i):
 
     data = get_data()
-    print(data)
+    #print(data)
 
     e_az_new = float(data['X'])
     e_alt_new = float(data['Z'])
-    #Sys_cal_new = float(data['Sys_cal'])
+
+    # The plot will use the calibration value as the vector length in the polar plot.  In the circuit python version of
+    # pico_ser.py, running the on the, PICO board does not return thee calibration value.
+
+    if data['Sys_cal'] is None:          # this will be the case util circuitpython surfaces the calibrations values
+        Sys_cal_new = 3
+    else:
+        Sys_cal_new = float(data['Sys_cal'])
 
     print(data['X'],
           " , ",
@@ -57,20 +46,18 @@ def animate(i):
     # Add the new point to the list
     e_az.append(e_az_new )
     e_alt.append(e_alt_new)
-    #Sys_cal.append(Sys_cal_new )
+    Sys_cal.append(Sys_cal_new )
 
     # Take the last few points to plot
     N = 5
     az = e_az[-N:]
     alt = e_alt[-N:]
-    #S = Sys_cal[-N:]
+    S = Sys_cal[-N:]
 
     axs[0].set_rmax(3)
     axs[0].set_rticks([2])
     axs[0].set_facecolor(plt.cm.gray(.95))
     axs[0].grid(True)
-
-
 
     axs[1].set_rticks([2])
     axs[1].set_facecolor(plt.cm.gray(.95))
@@ -88,14 +75,11 @@ def animate(i):
     axs[0].set_theta_zero_location('N')
     axs[0].set_theta_direction(-1)
 
-    S = 2
+    #S = [3,3,3,3]
     print(az)
-    axs[0].plot(az[0], S, 'go')
-    axs[1].plot(alt[0], S, 'ro')
+    axs[0].plot(az, S, 'go')
+    axs[1].plot(alt, S, 'ro')
 
-
-
-#TODO the labels are not displaying on all three plots, only the last
 
 fig, axs = plt.subplots(1,2, subplot_kw={'projection': 'polar'})
 
