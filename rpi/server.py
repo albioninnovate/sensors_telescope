@@ -26,7 +26,7 @@ config.read('config.ini')
 async def handle_echo(reader, writer):
 
     #n = int(config['DATA']['characters'])
-    n = 1000
+    n = 100
     data = await reader.read(n)
 
     message = data.decode()
@@ -61,7 +61,7 @@ async def main():
 #    server = await asyncio.start_server(
 #        handle_echo, 'freeside.local', 8888)
    server = await asyncio.start_server(
-       handle_echo, '10.0.252.60', 8888)
+       handle_echo, '169.254.230.229', 8888)
 
    addr = server.sockets[0].getsockname()
    print('Serving on ', addr)
