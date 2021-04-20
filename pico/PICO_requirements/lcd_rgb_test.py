@@ -1,40 +1,44 @@
+
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 
-"""Simple test for monochromatic character LCD"""
+"""Simple test for I2C RGB character LCD shield kit"""
 import time
 import board
-import digitalio
-import adafruit_character_lcd.character_lcd as characterlcd
+import busio
+import adafruit_character_lcd.character_lcd_rgb_i2c as character_lcd
 
-
-
-# Modify this if you have a different sized character LCD
+# Modify this if you have a different sized Character LCD
 lcd_columns = 16
 lcd_rows = 2
+SDA = board.GP12
+SCL = board.GP13
 
 
-# Pico Pin Config:
-lcd_rs = digitalio.DigitalInOut(board.GP8)
-lcd_en = digitalio.DigitalInOut(board.GP9)
-lcd_d7 = digitalio.DigitalInOut(board.GP13)
-lcd_d6 = digitalio.DigitalInOut(board.GP12)
-lcd_d5 = digitalio.DigitalInOut(board.GP11)
-lcd_d4 = digitalio.DigitalInOut(board.GP10)
-lcd_backlight = digitalio.DigitalInOut(board.GP14)
+# Initialise I2C bus.
+# i2c = busio.I2C(board.SCL, board.SDA)
+i2c = busio.I2C(SCL, SDA)
 
 # Initialise the LCD class
-lcd = characterlcd.Character_LCD_Mono(
-    lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7, lcd_columns, lcd_rows, lcd_backlight
-)
+lcd = character_lcd.Character_LCD_RGB_I2C(i2c, lcd_columns, lcd_rows)
 
-# Turn backlight on
-lcd.backlight = True
-# Print a two line message
+lcd.clear()
+# Set LCD color to red
+lcd.color = [100, 0, 0]
+time.sleep(1)
+# Print two line message
 lcd.message = "Hello\nCircuitPython"
-
 # Wait 5s
 time.sleep(5)
+# Set LCD color to blue
+lcd.color = [0, 100, 0]
+time.sleep(1)
+# Set LCD color to green
+lcd.color = [0, 0, 100]
+time.sleep(1)
+# Set LCD color to purple
+lcd.color = [50, 0, 50]
+time.sleep(1)
 lcd.clear()
 # Print two line message right to left
 lcd.text_direction = lcd.RIGHT_TO_LEFT
@@ -60,13 +64,14 @@ lcd.clear()
 # Create message to scroll
 scroll_msg = "<-- Scroll"
 lcd.message = scroll_msg
-# Scroll message to the left
+# Scroll to the left
 for i in range(len(scroll_msg)):
     time.sleep(0.5)
     lcd.move_left()
 lcd.clear()
+time.sleep(1)
 lcd.message = "Going to sleep\nCya later!"
-time.sleep(3)
-# Turn backlight off
-lcd.backlight = False
-time.sleep(2)
+time.sleep(5)
+# Turn off LCD backlights and clear text
+lcd.color = [0, 0, 0]
+lcd.clear()

@@ -8,16 +8,16 @@ import board
 import busio
 import adafruit_bno055
 
+#fr the LCD
+import lcd_rgb
+
 
 # Use these lines for I2C
-SDA = board.GP16
-SCL = board.GP17
+bno_SDA = board.GP18
+bno_SCL = board.GP19
 
-#i2c = busio.I2C(board.SCL, board.SDA)
-i2c = busio.I2C(SCL,SDA)
-print(i2c)
+i2c = busio.I2C(bno_SCL,bno_SDA)
 
-#i2c = busio.I2C(board.SCL, board.SDA)
 sensor = adafruit_bno055.BNO055_I2C(i2c)
 
 # User these lines for UART
@@ -25,7 +25,6 @@ sensor = adafruit_bno055.BNO055_I2C(i2c)
 # sensor = adafruit_bno055.BNO055_UART(uart)
 
 last_val = 0xFFFF
-
 
 def temperature():
     global last_val  # pylint: disable=global-statement
@@ -43,35 +42,36 @@ def decdeg2dms(dd):
     deg,mnt = divmod(mnt,60)
     return deg,mnt,sec
 
+def average(sensor, n=100):
+    cnt=1
+    az_list = []
+    alt_list = []
 
+    while cnt <= n:
+        az_list.append(sensor.euler[0])
+        alt_list.append(sensor.euler[2])
+        cnt +=1
+    az_ave  = sum(az_list)/n
+    alt_ave = sum(alt_list)/n
+    return az_ave, alt_ave
 
-# ---------------------------------------------------
+def serial_out(sensor):
+    print('X:',sensor.euler[0], '  Y:',sensor.euler[1], '  Z:',sensor.euler[2])
 
-#for the lcd
-import digitalio
-import adafruit_character_lcd.character_lcd as characterlcd
+def to_dms_str(az,alt):
+    m = "' "
+    s = '" '
 
-# Modify this if you have a different sized character LCD
-lcd_columns = 16
-lcd_rows = 2
+    az_dms = decdeg2dms(az)
+    az_str =  str(round(az_dms[0]))+" "+str(round(az_dms[1]))+m+str(az_dms[2])+s
 
+    alt_dms  = decdeg2dms(alt)
+    alt_str =  str(round(alt_dms[0]))+" "+str(round(alt_dms[1]))+m+str(round(alt_dms[2],1))+s
 
-# Pico Pin Config:
-lcd_rs = digitalio.DigitalInOut(board.GP8)
-lcd_en = digitalio.DigitalInOut(board.GP9)
-lcd_d7 = digitalio.DigitalInOut(board.GP13)
-lcd_d6 = digitalio.DigitalInOut(board.GP12)
-lcd_d5 = digitalio.DigitalInOut(board.GP11)
-lcd_d4 = digitalio.DigitalInOut(board.GP10)
-lcd_backlight = digitalio.DigitalInOut(board.GP14)
+    return az_str , alt_str
 
-# Initialise the LCD class
-lcd = characterlcd.Character_LCD_Mono(
-    lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7, lcd_columns, lcd_rows, lcd_backlight
-)
-
-
-while True:
+if __name__ == "__main__":
+    while True:
 
 #    print("Temperature: {} degrees C".format(sensor.temperature))
 #    """
@@ -88,48 +88,23 @@ while True:
 #    print("Gravity (m/s^2): {}".format(sensor.gravity))
 #    print()
 
-#send the data over the serial (USB) port
-    print('X:',sensor.euler[0], '  Y:',sensor.euler[1], '  Z:',sensor.euler[2])
-
-# send the data to the lcd screen
-# the LCD screen is connected directly to the microcontroller board so that when powered it can be used with out the Pi
-    # Turn backlight on
-    lcd.backlight = True
-
-    # Print a two line message
-    #lcd.message = "Hello\nCircuitPython"
+    #send the data over the serial (USB) port
+        serial_out(sensor)
 
 
-# average the values before displaying
-    cnt=1
-    n = 100
-    az_list = []
-    alt_list = []
-
-    while cnt <= n:
-        az_list.append(sensor.euler[0])
-        alt_list.append(sensor.euler[2])
-        cnt +=1
-    az_ave  = sum(az_list)/n
-    alt_ave = sum(alt_list)/n
+    # average the values before displaying
+        az , alt = average(sensor)
+        #print(az,alt)
 
     #az = str(sensor.euler[0])
     #alt = str(sensor.euler[1])
     #lcd.message =az+nl+alt
 
 #change to deg min and sec
-    m = "' "
-    s = '" '
 
-    #az_dms = decdeg2dms(sensor.euler[0])
-    az_dms = decdeg2dms(az_ave)
-    az =  str(round(az_dms[0]))+" "+str(round(az_dms[1]))+m+str(az_dms[2])+s
+        az_str , alt_str = to_dms_str(az,alt)
+        #print(az_str , alt_str)
 
-    #alt_dms = decdeg2dms(sensor.euler[1])
-    alt_dms = decdeg2dms(alt_ave)
-    alt =  str(round(alt_dms[0]))+" "+str(round(alt_dms[1]))+m+str(round(alt_dms[2],1))+s
+        nl = "\n"
 
-    nl = "\n"
-    lcd.clear()
-
-    lcd.message =az+nl+alt
+        lcd_rgb.show(az_str+nl+alt_str)

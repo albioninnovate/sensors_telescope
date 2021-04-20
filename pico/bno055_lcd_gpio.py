@@ -10,14 +10,11 @@ import adafruit_bno055
 
 
 # Use these lines for I2C
-SDA = board.GP16
-SCL = board.GP17
+bno_SDA = board.GP16
+bno_SCL = board.GP17
 
-#i2c = busio.I2C(board.SCL, board.SDA)
-i2c = busio.I2C(SCL,SDA)
-print(i2c)
+i2c = busio.I2C(bno_SCL,bno_SDA)
 
-#i2c = busio.I2C(board.SCL, board.SDA)
 sensor = adafruit_bno055.BNO055_I2C(i2c)
 
 # User these lines for UART
@@ -25,7 +22,6 @@ sensor = adafruit_bno055.BNO055_I2C(i2c)
 # sensor = adafruit_bno055.BNO055_UART(uart)
 
 last_val = 0xFFFF
-
 
 def temperature():
     global last_val  # pylint: disable=global-statement
@@ -42,7 +38,6 @@ def decdeg2dms(dd):
     mnt,sec = divmod(dd*3600,60)
     deg,mnt = divmod(mnt,60)
     return deg,mnt,sec
-
 
 
 # ---------------------------------------------------
