@@ -6,3 +6,11 @@ needed to run bno055.py and bno055_display.  Place it in the
 PICO directory ' CIRCUITPY '.   USe Mu to run and serial to display the 
 output
 
+
+
+
+
+CircuitPython 
+
+latest drivers can be found here:
+https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases

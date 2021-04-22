@@ -122,3 +122,6 @@ see:
     - reset button and LEDs must be accessible /viable ( ideally LED only visible looking directly into board, so ambient light noise  is kept to min  ) 
 
 
+##references
+Character LCD display
+https://circuitpython.readthedocs.io/projects/charlcd/en/latest/
