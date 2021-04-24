@@ -34,6 +34,7 @@ def animate(i):
 
     e_az_new = float(data['X'])
     e_alt_new = float(data['Z'])
+    print(e_alt_new)
 
     # The plot will use the calibration value as the vector length in the polar plot.  In the circuit python version of
     # pico_ser.py, running the on the, PICO board does not return thee calibration value.
@@ -44,8 +45,8 @@ def animate(i):
     else:
         Sys_cal_new = float(data['Sys_cal'])
 
-    e_az_new = math.radians(e_az_new)
-    e_alt_new = math.radians((e_alt_new))  * -1
+    e_az_new = math.radians(e_az_new) +1
+    e_alt_new = math.radians((e_alt_new))
 
     # Add the new point to the list
     e_az.append(e_az_new )
@@ -59,7 +60,8 @@ def animate(i):
     S = Sys_cal[-N:]
 
     axs[0].set_rmax(3)
-    axs[0].set_rticks([2])
+    axs[0].set_rticks([1,2,3])
+
     axs[0].set_facecolor(plt.cm.gray(.95))
     axs[0].grid(True)
 
@@ -81,6 +83,22 @@ def animate(i):
 
     axs[0].plot(az, S, 'go')
     axs[1].plot(alt, S, 'ro')
+
+    axs[0].text(0,0,
+                round(math.degrees(e_az_new),2),
+                bbox=dict(facecolor='white', edgecolor='green', alpha=0.8),
+                fontsize=24,
+                ha='center',
+                va = 'center'
+                )
+
+    axs[1].text(0,0,
+                round(math.degrees(e_alt_new),2),
+                bbox=dict(facecolor='white', edgecolor='red', alpha=0.8),
+                fontsize=24,
+                ha='center',
+                va = 'center'
+                )
 
     axs[0].set
 

@@ -28,9 +28,10 @@ def stat_config():
 async def tcp_echo_client(message):
 
     #ip_addr = config['ADDRESS']['ip_addr']
-   # reader, writer = await asyncio.open_connection( '192.168.1.41', 8888)
-    #reader, writer = await asyncio.open_connection('10.0.252.60', 8888)
-    reader, writer = await asyncio.open_connection('192.168.1.24', 8888)
+
+   # reader, writer = await asyncio.open_connection('169.254.162.167', 8888)
+    reader, writer = await asyncio.open_connection('triscopepi.local', 8888)
+
 
     writer.write(message.encode())
 
