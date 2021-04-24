@@ -88,7 +88,6 @@ def read(output_format='dict'):
                 return readings
 
         except Exception as e:
-            logging.debug(e)
             print(e)
             pass
 

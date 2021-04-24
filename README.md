@@ -102,11 +102,53 @@ See the Adafruit instructions for the necessary libraries.  The sketch is here a
 
 # Server
 
+
+Set crontab
+
+ref: https://www.raspberrypi.org/documentation/linux/usage/cron.md
+
+crontab -e
+
+
+Add this line.
+@reboot sleep 30;/usr/bin/python3 /home/pi/code/sensors_triscope/rpi/server.py
+
+
+the sleep 30, allow time for the network connection and IP address to be established.  
+
+---
 see: 
     rpi/README_server.md
+---
+Setting server to run on RaspberryPi boot:
+    
+Create aa Unit file 
+```
+sudo nano /lib/systemd/system/triscope_server.service
+````
+
+Add this text 
+```
+ [Unit]
+ Description= Sensors Triscope Server
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=/usr/bin/python3 /home/pi/code/sensors_triscope/rpi/server.py
+
+ [Install]
+ WantedBy=multi-user.target
+```
 
 
+Set permission of the unit file to: 
 
+```
+sudo chmod 644 /lib/systemd/system/triscope_server.service
+```
+
+----
 
 
 # TODO
@@ -120,6 +162,15 @@ see:
     - should be far from metallic and electronic components of the telescope (struts)
     - placement on the telesope must be movable with the mounting cage
     - reset button and LEDs must be accessible /viable ( ideally LED only visible looking directly into board, so ambient light noise  is kept to min  ) 
+
+
+# client 
+in the line:
+  reader, writer = await asyncio.open_connection('triscopepi.local', 8888)
+
+
+the host name can be used if that matches the IP address. In the case of two networks being active (Ethernet and WIFI) the Rpi may have two address.  The connection can be forced over the direct link ether net byt switching off the WIFI and making a call to the server via the host name.  After this is done the wifi can be switched back on with the host name remaining accociated  with the ethernet connection   
+
 
 
 ##references

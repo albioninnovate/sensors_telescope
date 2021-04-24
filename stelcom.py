@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
 
         az_rad  = - math.radians(az) - math.pi
-        alt_rad = - math.radians(alt)
+        alt_rad =  math.radians(alt)
 
         print("Az/Alt : ", az_rad, ' / ', alt_rad)
 

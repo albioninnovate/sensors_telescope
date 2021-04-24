@@ -1,28 +1,16 @@
-# python_live_plot.py
 
-from itertools import count
+
+"""
+This software reads from the client
+
+
+"""
+
+
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import client
-from utils import quaternion
-import csv
 import math
-
-
-
-
-
-"""
-
-structure of data from 'bno055.ino':
-
-Euler values data structure:
-{X': '290.8125', 'y': '-2.0000', 'z': '2.8125', 'Sys_cal': '3', 'G_cal': '3', 'A_cal': '1', 'M_cal': '2'}
-
-quaternion data structure: 
-qW: 0.7653 qX: -0.0292 qY: -0.0126 qZ: 0.6429		Sys=3 Gyro=3 Accel=0 Mag=3
-
-"""
 
 
 def get_data():
@@ -39,38 +27,43 @@ Sys_cal = []
 
 def animate(i):
 
-    data = get_data()
-    print(data)
+    try:
+        data = get_data()
+    except:
+        print('data not received')
 
     e_az_new = float(data['X'])
     e_alt_new = float(data['Z'])
-    #Sys_cal_new = float(data['Sys_cal'])
+    print(e_alt_new)
 
-    print(data['X'],
-          " , ",
-          data['Z']
-          )
+    # The plot will use the calibration value as the vector length in the polar plot.  In the circuit python version of
+    # pico_ser.py, running the on the, PICO board does not return thee calibration value.
 
-    e_az_new = math.radians(e_az_new)
-    e_alt_new = math.radians((e_alt_new))  * -1
+    if len(data) <= 3 :          # this will be the case util circuitpython surfaces the calibrations values
+        Sys_cal_new = 3
+        msg = 'Calibration data not received'
+    else:
+        Sys_cal_new = float(data['Sys_cal'])
+
+    e_az_new = math.radians(e_az_new) +1
+    e_alt_new = math.radians((e_alt_new))
 
     # Add the new point to the list
     e_az.append(e_az_new )
     e_alt.append(e_alt_new)
-    #Sys_cal.append(Sys_cal_new )
+    Sys_cal.append(Sys_cal_new )
 
     # Take the last few points to plot
     N = 5
     az = e_az[-N:]
     alt = e_alt[-N:]
-    #S = Sys_cal[-N:]
+    S = Sys_cal[-N:]
 
     axs[0].set_rmax(3)
-    axs[0].set_rticks([2])
+    axs[0].set_rticks([1,2,3])
+
     axs[0].set_facecolor(plt.cm.gray(.95))
     axs[0].grid(True)
-
-
 
     axs[1].set_rticks([2])
     axs[1].set_facecolor(plt.cm.gray(.95))
@@ -88,14 +81,26 @@ def animate(i):
     axs[0].set_theta_zero_location('N')
     axs[0].set_theta_direction(-1)
 
-    S = 2
-    print(az)
-    axs[0].plot(az[0], S, 'go')
-    axs[1].plot(alt[0], S, 'ro')
+    axs[0].plot(az, S, 'go')
+    axs[1].plot(alt, S, 'ro')
 
+    axs[0].text(0,0,
+                round(math.degrees(e_az_new),2),
+                bbox=dict(facecolor='white', edgecolor='green', alpha=0.8),
+                fontsize=24,
+                ha='center',
+                va = 'center'
+                )
 
+    axs[1].text(0,0,
+                round(math.degrees(e_alt_new),2),
+                bbox=dict(facecolor='white', edgecolor='red', alpha=0.8),
+                fontsize=24,
+                ha='center',
+                va = 'center'
+                )
 
-#TODO the labels are not displaying on all three plots, only the last
+    axs[0].set
 
 fig, axs = plt.subplots(1,2, subplot_kw={'projection': 'polar'})
 

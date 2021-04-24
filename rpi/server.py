@@ -21,7 +21,7 @@ config.read('config.ini')
 async def handle_echo(reader, writer):
 
     #n = int(config['DATA']['characters'])
-    n = 100
+    n = 1000
     data = await reader.read(n)
 
     message = data.decode()
@@ -49,6 +49,7 @@ async def handle_echo(reader, writer):
 async def main():
 #   server = await asyncio.start_server(
 #       handle_echo, '192.168.1.39', 8888)
+
 
 
 #   server = await asyncio.start_server(
