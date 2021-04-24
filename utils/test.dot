@@ -18,7 +18,8 @@ digraph {
 	subgraph cluster_Laptop {
 		color=green;
 		node [style=filled];
-		"Client.py"->"Animate.py", "Stelcom.py";
+		"Client.py"->"Animate.py";
+		"Client.py"->"Stelcom.py";
 		"Stellariutm";
 		label = "Laptop";
 		}
