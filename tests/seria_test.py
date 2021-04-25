@@ -1,4 +1,3 @@
-
 import serial
 
 if __name__ == '__main__':
@@ -14,4 +13,4 @@ if __name__ == '__main__':
                 line = ser.readline().decode('utf-8').rstrip()
                 print(line)
         except:
-           pass
+            pass

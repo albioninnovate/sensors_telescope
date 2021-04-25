@@ -1,4 +1,3 @@
-
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 
@@ -14,7 +13,6 @@ lcd_rows = 2
 SDA = board.GP12
 SCL = board.GP13
 
-
 # Initialise I2C bus.
 # i2c = busio.I2C(board.SCL, board.SDA)
 i2c = busio.I2C(SCL, SDA)
@@ -22,8 +20,8 @@ i2c = busio.I2C(SCL, SDA)
 # Initialise the LCD class
 lcd = character_lcd.Character_LCD_RGB_I2C(i2c, lcd_columns, lcd_rows)
 
-def demo():
 
+def demo():
     lcd.clear()
     # Set LCD color to red
     lcd.color = [100, 0, 0]
@@ -78,14 +76,16 @@ def demo():
     lcd.color = [0, 0, 0]
     lcd.clear()
 
+
 def show(msg='msg'):
     lcd.color = [100, 0, 0]
     lcd.message = msg
+
 
 def clear_screen():
     lcd.clear()
 
 
 if __name__ == "__main__":
-    #demo()
+    # demo()
     show()

@@ -8,10 +8,6 @@ from utils import quaternion
 import csv
 import math
 
-
-
-
-
 """
 
 structure of data from 'bno055.ino':
@@ -33,12 +29,13 @@ def get_data():
 
     return received
 
-e_az  = []
-e_alt =[]
+
+e_az = []
+e_alt = []
 Sys_cal = []
 
-def animate(i):
 
+def animate():
     data = get_data()
 
     e_az_new = float(data['X'])
@@ -53,24 +50,22 @@ def animate(i):
           )
 
     e_az_new = math.radians(e_az_new)
-    e_alt_new = math.radians((e_alt_new))  * -1
+    e_alt_new = math.radians(e_alt_new) * -1
 
     # Add the new point to the list
-    e_az.append(e_az_new )
+    e_az.append(e_az_new)
     e_alt.append(e_alt_new)
-    Sys_cal.append(Sys_cal_new )
+    Sys_cal.append(Sys_cal_new)
 
     # Take the last few points to plot
     N = 5
     az = e_az[-N:]
     alt = e_alt[-N:]
-    S = Sys_cal[-N:]
 
     # axs[0].set_rmax(3)
     # axs[0].set_rticks([2])
     # axs[0].set_facecolor(plt.cm.gray(.95))
     # axs[0].grid(True)
-
 
     #
     # axs[1].set_rticks([2])
@@ -89,17 +84,14 @@ def animate(i):
     # axs[0].set_theta_zero_location('N')
     # axs[0].set_theta_direction(-1)
 
-
     axs.plot(az, alt, 'go')
 
 
-
-
-#TODO the labels are not displaying on all three plots, only the last
+# TODO the labels are not displaying on all three plots, only the last
 
 fig, axs = plt.subplots(111, subplot_kw={'projection': "hammer"})
 
-ani = FuncAnimation(fig, animate,1)
+ani = FuncAnimation(fig, animate, 1)
 
 plt.tight_layout()
 plt.show()

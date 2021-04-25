@@ -4,7 +4,7 @@ import serial
 import json
 
 """
-This module reads from the serial port and splits the data feed the RasberryPi PICO running a version of pico/bno055.py in this repo 
+This module reads from the serial port and splits the data feed the RaspberryPi PICO running a version of pico/bno055.py in this repo 
 bno055.py can return many or selected parts of the data produced by the sensor.  
 
 Note both the data and structure being sent carefully.  
@@ -12,13 +12,13 @@ Note both the data and structure being sent carefully.
 quaternion data line structure: 
 qW: 0.7653 qX: -0.0292 qY: -0.0126 qZ: 0.6429		Sys=3 Gyro=3 Accel=0 Mag=3
 
-Each line is received in the above structure from the Ardiuno. IT must be striped and put in a dictionary structure 
+Each line is received in the above structure from the Arduino. IT must be striped and put in a dictionary structure 
 
 
 """
 
-def to_json(dict):
-    return json.dumps(dict).encode('utf-8')
+def to_json(payload):
+    return json.dumps(payload).encode('utf-8')
 
 
 def read(output_format='dict'):
@@ -51,7 +51,6 @@ def read(output_format='dict'):
     ser.flush()
 
     while True:
-        readings = {}
         try:
             if ser.in_waiting > 0:
                 line = ser.readline().decode('utf-8').rstrip()

@@ -6,6 +6,7 @@ ref https://stackoverflow.com/questions/56207448/efficient-quaternions-to-euler-
 
 """
 
+
 def to_euler(w, x, y, z):
     ysqr = y * y
 
@@ -22,8 +23,8 @@ def to_euler(w, x, y, z):
     t4 = +1.0 - 2.0 * (ysqr + z * z)
     Z = np.degrees(np.arctan2(t3, t4))
 
-# A second method using ffthe maths library
-# ref https://www.meccanismocomplesso.org/en/hamiltons-quaternions-and-3d-rotation-with-python/
+    # A second method using the maths library
+    # ref https://www.meccanismocomplesso.org/en/hamiltons-quaternions-and-3d-rotation-with-python/
 
     # t0 = 2 * (w * x + y * z)
     # t1 = 1 - 2 * (x * x + y * y)
@@ -38,13 +39,11 @@ def to_euler(w, x, y, z):
     # t4 = 1 - 2 * (y * y + z * z)
     # Z = m.atan2(t3, t4)
 
-
     return X, Y, Z
 
-def quaternion_to_euler(w, x, y, z):
 
-
-        return X, Y, Z
+def quaternion_to_euler():
+    return X, Y, Z
 
 
 if __name__ == '__main__':

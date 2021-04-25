@@ -1,0 +1,36 @@
+
+digraph {
+	layout=dot
+	subgraph cluster_PICO {
+		color=blue;
+		node [style=filled];
+		"bno055.py" -> "lcd_rgb.py";
+		label = "PICO";
+		}
+
+	subgraph cluster_Rpi {
+		color=darkgrey;
+		node [style=filled];
+		"pico_ser.py" -> "server.py" ;
+		label = "Raspberry Pi";
+		}
+
+	subgraph cluster_Laptop {
+		color=green;
+		node [style=filled];
+
+		"Client.py"->"Animate.py";
+		"Client.py"->"Stelcom.py";
+		"Stellariutm";
+		label = "Laptop";
+		}
+
+	BNO055 -> "bno055.py"
+	BNO055 [shape=square]
+	"Client.py"->"server.py";
+	"bno055.py" -> "pico_ser.py" [taillabel = "Serial Print"]
+	"server.py" ->"Client.py" [taillabel="asyncio", label = "network", headlabel = "asyncio" ]
+	"Stelcom.py"-> "Stellariutm"[taillabel = "post", arrowhead = diamond]
+	"Stellariutm" [shape=arrow];
+
+}

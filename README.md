@@ -1,5 +1,5 @@
 # Sensors_telescope
-Sensor package for positioning telescope, to track targets, interfacing with astronomy software (Stellerarium). 
+Sensor package for positioning telescope, to track targets, interfacing with astronomy software (Stellarium). 
 
 
 
@@ -23,7 +23,7 @@ The initial strategy was to connect the BNO055 to a Raspberry Pi via I2C.  Altho
 A second strategy it was much more successful. This was using an I2C connection via an Arduino and a USB connection between the Arduino and a Raspberry Pi.  The data return was very steady.   The demo Arduino scripts were more than sufficient to return the heading, pitch and yaw (azimuth, altitude and tilt) along with some data quality indicators. 
 
 ## Data choice 
-The BNO055 outputs several times of direct measurements (Mag, Gyro, Acc, etc) and two sets of derived information, Euler Angles and Quaternions.  A quick review of literature suggests that Euler Angles can be problematic and it is best to use quaternions in any data manipulations only conversting to Euler angels in the last steps. 
+The BNO055 outputs several types of direct measurements (Mag, Gyro, Acc, etc) and two sets of derived information, Euler Angles and Quaternions.  A quick review of literature suggests that Euler Angles can be problematic, and it is best to use quaternions in any data manipulations only converting to Euler angels in the last steps. 
 This does not see to hold for the BNO055.  Initially data was erratic prompting a strategy of averaging the output.  The output is received in multi layer dictionary structures, so a utility was written to flatten the dictionary and average them (utils/flatten_dict.py).  Another utility was written to convert quaternions to Euler angels (utils/quaternion.py). 
 
 The Euler angles output it from the sensor seem to be quite stable and correspond well with the orientation of the chip.  the decision was made to use the output from the chip directly ignoring the quaternions for now. It is worth investigating the processing done on the microprocessor of the BNO055 there appears to be some smoothing in the output data evidenced by its stability. 
@@ -68,21 +68,24 @@ python38 -m pip install adafruit-circuitpython-bno055
 
 ## Information flow
 
-It is anticipated that the information produced by the sensor will be used for more than one application for example; direct display at the telescope, feedback to the positioning system and sending orientation information to external programmes like Stellarium.  To accommodate this a architecture which allowed the sensor to continually produce data that could be requested by various clients.  
+It is anticipated that the information produced by the sensor will be used for more than one application for example; direct display at the telescope, feedback to the positioning system and sending orientation information to external programmes like Stellarium.  To accommodate this an architecture which allowed the sensor to continually produce data that could be requested by various clients.  
 
-The system comprises a BNO055 connected by I2C to an Arduino sending data via a serial connexion to a Raspberry Pi running a simple server which is available over a IP network.   
+The system comprises a BNO055 connected by I2C to an Arduino sending data via a serial connexion to a Raspberry Pi running a simple server which is available over an IP network.   
 
 
 ![image](docs/arch.png)
 
+# Telescope Capabilities
 
+The goal of the project is that the pointing direction of the Optical Tube Assembly (OTA) is available to the user with only 5v power at the telescope. The user should be able to have "push to" functionally without any other computer or network connection.  This implies that simple calibrations are part of the system.   This latter capability is only practically possible with a some type of use interface, say buttons on the LCD screen.  
 
+If more computing capability, and power is available, data recording, coordination with astronomy software (e.g. Stellarium), or motor drivers become a goal. 
 
 # Ardunio setup 
 
 ref: https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/arduino-code
 
-an Arduno Mega was used for prototyping and in the future is a possibility for driving motors.  To connect the assembled BNO055 breakout to an Arduino
+an Arduino Mega was used for prototyping and in the future is a possibility for driving motors.  To connect the assembled BNO055 breakout to an Arduino
 
 
 Pinouts:
@@ -100,18 +103,62 @@ for mounting on the telescope the smaller form factor of a nano has advantages.
 
 See the Adafruit instructions for the necessary libraries.  The sketch is here arduino/bno055/bno055.ino.  Note the directory 'bno055' is needed by the Arduino IDE, do not remove it.
 
+# PICO set up 
+
+## Pinouts
+
+## Software
+
+### Circuitpython
+
+#### Installation 
+
+#### Requirements
+
+#### Software
+ bno055.py
+
+ lcd_rgb.py
+
+
+# LCD Screen
+
+
+
+
+
+
+
+
+
+
 # Server
 
+In development and testing a Rpi 3 running a fresh installation of Buster was used.
 
-Set crontab
+Running the server has several requirements.
+
+* Start on boot so that all that is required in the field is power on. 
+* Be accessible via fixed IP or hostname from the laptop
+* Robustly find the serial port of the PICO/Arduino 
+
+## Start on boot
+
+Crontab is used to launch the server when the Rpi is powered. An updated version of Python3 was added to gain asyncio (https://docs.python.org/3.7/library/asyncio.html). 
 
 ref: https://www.raspberrypi.org/documentation/linux/usage/cron.md
 
+Edit Crontab on the Rpi by opening a terminal and executing the command: 
+```
 crontab -e
+```
 
-
-Add this line.
+If asked select the nano editor.  In the file that opens, add this line.
+```
 @reboot sleep 30;/usr/bin/python3 /home/pi/code/sensors_triscope/rpi/server.py
+```
+A python version later than 3.7 be used so that asyncio is available.  A sleep of 30 seconds allows the Rpi to fully boot and establish network connections.  This has not be fully tested so other values, or elimination,  might also work
+
 
 
 the sleep 30, allow time for the network connection and IP address to be established.  
@@ -156,11 +203,11 @@ sudo chmod 644 /lib/systemd/system/triscope_server.service
 -Design a case for mounting the sensor and Ardunio to the telescope.
     - damp proof
     - mount to align struts of telescope with all axis of sensors
-    - cable management, single cable that doe not interfere with AZ/Alt movement of telescope tube. 
+    - cable management, single cable that does not interfere with AZ/Alt movement of telescope tube. 
     - must be removable in the field
     - must not protrude out of the circumference of the telescope frame 
     - should be far from metallic and electronic components of the telescope (struts)
-    - placement on the telesope must be movable with the mounting cage
+    - placement on the telescope must be movable with the mounting cage
     - reset button and LEDs must be accessible /viable ( ideally LED only visible looking directly into board, so ambient light noise  is kept to min  ) 
 
 
@@ -169,10 +216,10 @@ in the line:
   reader, writer = await asyncio.open_connection('triscopepi.local', 8888)
 
 
-the host name can be used if that matches the IP address. In the case of two networks being active (Ethernet and WIFI) the Rpi may have two address.  The connection can be forced over the direct link ether net byt switching off the WIFI and making a call to the server via the host name.  After this is done the wifi can be switched back on with the host name remaining accociated  with the ethernet connection   
+the host name can be used if that matches the IP address. In the case of two networks being active (Ethernet and WI-FI) the Rpi may have two addresses.  The connection can be forced over the direct link ether net byt switching off the WI-FI and making a call to the server via the host name.  After this is done the Wi-Fi can be switched back on with the host name remaining associated  with the ethernet connection   
 
 
 
 ##references
-Character LCD display
+Character LCD
 https://circuitpython.readthedocs.io/projects/charlcd/en/latest/

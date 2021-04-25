@@ -1,11 +1,8 @@
-
-
 """
 This software reads from the client
 
 
 """
-
 
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -21,37 +18,35 @@ def get_data():
 
     return received
 
-e_az  = []
+
+e_az = []
 e_alt = []
 Sys_cal = []
 
-def animate(i):
 
+# noinspection PyPep8Naming
+def animate():
     try:
         data = get_data()
+        e_az_new = float(data['X'])
+        e_alt_new = float(data['Z'])
+        # The plot will use the calibration value as the vector length in the polar plot.
+        # In the circuitpython version of pico_ser.py does not return the calibration value.
+
+        if len(data) <= 3:  # this will be the case until circuitpython surfaces the calibrations values
+            Sys_cal_new = 3
+        else:
+            Sys_cal_new = float(data['Sys_cal'])
     except:
         print('data not received')
 
-    e_az_new = float(data['X'])
-    e_alt_new = float(data['Z'])
-    print(e_alt_new)
-
-    # The plot will use the calibration value as the vector length in the polar plot.  In the circuit python version of
-    # pico_ser.py, running the on the, PICO board does not return thee calibration value.
-
-    if len(data) <= 3 :          # this will be the case util circuitpython surfaces the calibrations values
-        Sys_cal_new = 3
-        msg = 'Calibration data not received'
-    else:
-        Sys_cal_new = float(data['Sys_cal'])
-
-    e_az_new = math.radians(e_az_new) +1
-    e_alt_new = math.radians((e_alt_new))
+    e_az_new = math.radians(e_az_new) + 1
+    e_alt_new = math.radians(e_alt_new)
 
     # Add the new point to the list
-    e_az.append(e_az_new )
+    e_az.append(e_az_new)
     e_alt.append(e_alt_new)
-    Sys_cal.append(Sys_cal_new )
+    Sys_cal.append(Sys_cal_new)
 
     # Take the last few points to plot
     N = 5
@@ -60,7 +55,7 @@ def animate(i):
     S = Sys_cal[-N:]
 
     axs[0].set_rmax(3)
-    axs[0].set_rticks([1,2,3])
+    axs[0].set_rticks([1, 2, 3])
 
     axs[0].set_facecolor(plt.cm.gray(.95))
     axs[0].grid(True)
@@ -76,7 +71,6 @@ def animate(i):
     axs[0].set_title('AZ')
     axs[1].set_title('Alt', va='bottom')
 
-
     # rotate the axes to match a compass
     axs[0].set_theta_zero_location('N')
     axs[0].set_theta_direction(-1)
@@ -84,28 +78,26 @@ def animate(i):
     axs[0].plot(az, S, 'go')
     axs[1].plot(alt, S, 'ro')
 
-    axs[0].text(0,0,
-                round(math.degrees(e_az_new),2),
+    axs[0].text(0, 0,
+                round(math.degrees(e_az_new), 2),
                 bbox=dict(facecolor='white', edgecolor='green', alpha=0.8),
                 fontsize=24,
                 ha='center',
-                va = 'center'
+                va='center'
                 )
 
-    axs[1].text(0,0,
-                round(math.degrees(e_alt_new),2),
+    axs[1].text(0, 0,
+                round(math.degrees(e_alt_new), 2),
                 bbox=dict(facecolor='white', edgecolor='red', alpha=0.8),
                 fontsize=24,
                 ha='center',
-                va = 'center'
+                va='center'
                 )
 
-    axs[0].set
 
-fig, axs = plt.subplots(1,2, subplot_kw={'projection': 'polar'})
+fig, axs = plt.subplots(1, 2, subplot_kw={'projection': 'polar'})
 
-
-ani = FuncAnimation(fig, animate,1)
+ani = FuncAnimation(fig, animate, 1)
 
 plt.tight_layout()
 plt.show()

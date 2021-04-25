@@ -3,3 +3,5 @@ numpy~=1.19.4
 
 graphviz~=0.15
 requests~=2.25.0
+serial>=0.0.97
+pyserial>=3.5

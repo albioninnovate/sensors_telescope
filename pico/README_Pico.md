@@ -10,7 +10,10 @@ output
 
 
 
-CircuitPython 
+# CircuitPython 
 
 latest drivers can be found here:
 https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases
+
+
+TODO  copy the active code and requirements folder from the PICO on the Triscope 

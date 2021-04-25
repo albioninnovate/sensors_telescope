@@ -16,7 +16,7 @@ TODO
 
 ref https://www.raspberrypi-spy.co.uk/2015/10/how-to-autorun-a-python-script-on-boot-using-systemd/
 
-The intention is that the server.py module runs at boot of the RasperryPi platform. This allows reset of the Raspberrypi-Arduino-BNO055 system to be reset with a power cycle of the Raspberrypi. The Arduino and sensor are powered by the Raspberrypi via the USB port.  
+The intention is that the server.py module runs at boot of the RaspberryPi platform. This allows reset of the Raspberrypi-Arduino-BNO055 system to be reset with a power cycle of the Raspberrypi. The Arduino and sensor are powered by the Raspberrypi via the USB port.  
 
 The server is at this location in the repository to allow ready maintenance: 
 ```

@@ -4,16 +4,10 @@ import serial
 import json
 import logging
 
-# filename='ard_ser.log'
-#
-#
-# logging.basicConfig(format='%(asctime)s %(lineno)d %(message)s',
-#                     filename=filename,
-#                     level=logging.DEBUG)
 
 
 """
-This module reads from the serial port and splits the data feed the Ardunino running bno055.ino. 
+This module reads from the serial port and splits the data feed the Arduino running bno055.ino. 
 bno055.ino can return all or selected parts of the data produced by the sensor.  Note both the data and structure 
 being sent carefully.  
 
@@ -25,8 +19,8 @@ Each line is received in the above structure from the Ardiuno. IT must be stripe
 
 """
 
-def to_json(dict):
-    return json.dumps(dict).encode('utf-8')
+def to_json(payload):
+    return json.dumps(payload).encode('utf-8')
 
 
 def read(output_format='dict'):
