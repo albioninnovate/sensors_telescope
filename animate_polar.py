@@ -1,6 +1,20 @@
 """
-This software reads from the client
+    For modifications and text not covered by other licences:
 
+    Original software Copyright (C) 2020 Ward Hills
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """
 
@@ -31,7 +45,7 @@ def animate():
         e_az_new = float(data['X'])
         e_alt_new = float(data['Z'])
         # The plot will use the calibration value as the vector length in the polar plot.
-        # In the circuitpython version of pico_ser.py does not return the calibration value.
+        # In the circuitpython version of pico_svr.py does not return the calibration value.
 
         if len(data) <= 3:  # this will be the case until circuitpython surfaces the calibrations values
             Sys_cal_new = 3

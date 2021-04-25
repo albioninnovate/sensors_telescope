@@ -1,5 +1,26 @@
 from graphviz import Source
 
+
+"""
+    For modifications and text not covered by other licences:
+
+    Original software Copyright (C) 2020 Ward Hills 
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+"""
+
 """
 This is a viewer for ".dot" files.  Opens new window with diagram and writes the image to disk.
 To use, change file name and output format if needed. 
@@ -7,7 +28,7 @@ To use, change file name and output format if needed.
 ref: https://graphviz.org/
 
 """
-filename = 'test.dot'
+filename = 'system_arch.dot'
 
-s = Source.from_file('test.dot', format='png')
+s = Source.from_file(filename, format='png')
 s.view()

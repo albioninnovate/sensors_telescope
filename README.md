@@ -72,8 +72,8 @@ It is anticipated that the information produced by the sensor will be used for m
 
 The system comprises a BNO055 connected by I2C to an Arduino sending data via a serial connexion to a Raspberry Pi running a simple server which is available over an IP network.   
 
+![image](utils/system_arch.dot.png)
 
-![image](docs/arch.png)
 
 # Telescope Capabilities
 
@@ -123,8 +123,9 @@ See the Adafruit instructions for the necessary libraries.  The sketch is here a
 
 # LCD Screen
 
+Adafruit RGB Negative 16x2 LCD+Keypad Kit for Raspberry Pi (ref: https://www.adafruit.com/product/1110
 
-
+* pull up resistors needed, 5v logic 
 
 
 
@@ -197,18 +198,6 @@ sudo chmod 644 /lib/systemd/system/triscope_server.service
 
 ----
 
-
-# TODO
--Add photos of wiring between Arduino and sensor  boards 
--Design a case for mounting the sensor and Ardunio to the telescope.
-    - damp proof
-    - mount to align struts of telescope with all axis of sensors
-    - cable management, single cable that does not interfere with AZ/Alt movement of telescope tube. 
-    - must be removable in the field
-    - must not protrude out of the circumference of the telescope frame 
-    - should be far from metallic and electronic components of the telescope (struts)
-    - placement on the telescope must be movable with the mounting cage
-    - reset button and LEDs must be accessible /viable ( ideally LED only visible looking directly into board, so ambient light noise  is kept to min  ) 
 
 
 # client 

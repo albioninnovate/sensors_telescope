@@ -21,7 +21,7 @@ digraph {
 
 		"Client.py"->"Animate.py";
 		"Client.py"->"Stelcom.py";
-		"Stellariutm";
+		"Stellarium";
 		label = "Laptop";
 		}
 
@@ -30,7 +30,8 @@ digraph {
 	"Client.py"->"server.py";
 	"bno055.py" -> "pico_ser.py" [taillabel = "Serial Print"]
 	"server.py" ->"Client.py" [taillabel="asyncio", label = "network", headlabel = "asyncio" ]
-	"Stelcom.py"-> "Stellariutm"[taillabel = "post", arrowhead = diamond]
-	"Stellariutm" [shape=arrow];
+	"Stelcom.py"-> "Stellarium"[taillabel = "post", arrowhead = diamond]
+	"Stellarium" [shape=arrow];
+	rank = same; "server.py"; "Client.py";
 
 }
