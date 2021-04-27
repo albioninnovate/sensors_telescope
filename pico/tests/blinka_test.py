@@ -1,6 +1,6 @@
 import board
-import digitalio
 import busio
+import digitalio
 
 print("Hello blinka!")
 

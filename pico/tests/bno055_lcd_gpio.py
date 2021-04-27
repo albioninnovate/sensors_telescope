@@ -21,13 +21,10 @@
 
 """
 
-
-import time
+import adafruit_bno055
 import board
-
 # for the bno055
 import busio
-import adafruit_bno055
 
 # Use these lines for I2C
 bno_SDA = board.GP16

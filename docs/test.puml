@@ -1,0 +1,9 @@
+
+@startuml
+OTA <-> BNO055 : point
+BNO055 -> PICO : Eular
+PICO -> datafile : AltAz (measured)
+almanac -> datafile: AltAz (apparent)
+almanac -> : test ;
+
+@enduml

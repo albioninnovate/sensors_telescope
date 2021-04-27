@@ -21,10 +21,12 @@
 """
 
 
-import requests
-import pprint
-import client
 import math
+import pprint
+
+import requests
+
+import client
 
 
 def get_status(propId=-2, actionId=-2, verbose=False):

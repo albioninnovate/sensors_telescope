@@ -2,9 +2,10 @@
 # SPDX-License-Identifier: MIT
 
 import time
+
+import adafruit_bno055
 import board
 import busio
-import adafruit_bno055
 
 # Use these lines for I2C
 SDA = board.GP16

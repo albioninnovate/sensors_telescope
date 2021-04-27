@@ -1,0 +1,83 @@
+digraph  {
+    rankdir=TB
+	splines="Ortho"
+	nodesep=1
+	concentrate="true"
+
+	subgraph cluster_A {
+
+		color=blue;
+		node [style=filled];
+		Polaris; Castor; Serius; Vega;
+
+		label = "Calibration"
+		}
+
+	subgraph cluster_C {
+		color=green;
+		node [style=filled];
+		color=blue;
+
+		label = "Top Menu";
+		}
+
+	Coordinates -> Calibration [taillabel="Select", style=bold]
+    Calibration [shape=square]
+    Coordinates [shape=square]
+    Information [shape=square]
+
+	Coordinates[label="Coordinates\n\nAlt\nAZ"]
+
+	Calibration [label="Calibration\nTargets(dnBtn)"]
+	Calibration -> Polaris [taillabel="DnBtn", style=bold]
+	Calibration -> Information [taillabel="RtBtn"]
+	Calibration -> Coordinates [taillabel="LtBtn"]
+
+	Information -> Calibration [taillabel="LtBtn"]
+	Information -> Coordinates [taillabel="RtBtn"]
+
+	Polaris -> Castor [taillabel="DnBtn"]
+	Polaris -> Calibration [taillabel="LtBtn"]
+	Polaris -> PointtoStar[taillabel="Point OTA", style=bold]
+
+	Castor -> Polaris [taillabel="UpBtn"]
+	Castor -> Serius [taillabel="DnBtn"]
+	Castor -> Calibration [taillabel="LtBtn"]
+	Castor -> PointtoStar [taillabel="Point OTA"]
+
+	Serius -> Castor [taillabel="UpBtn"]
+	Serius -> Vega[taillabel="DnBtn"]
+	Serius -> Calibration [taillabel="LtBtn"]
+	Serius -> PointtoStar [taillabel="Point OTA"]
+
+	Vega -> Serius [taillabel="UpBtn"]
+	Vega -> Polaris [taillabel="DnBtn"]
+	Vega -> Calibration [taillabel="LtBtn"]
+	Vega -> PointtoStar [taillabel="Point OTA"]
+
+	PointtoStar[shape=trapezium, style=notfilled];
+	PointtoStar -> Store [taillabel="Select", style=bold]
+
+	Store [shape=note, style=notfilled, style=bold]
+
+	TimeStamp [shape=parallelogram]
+	TimeStamp -> Store
+	TimeStamp -> Information
+
+	Data_or_Calculate -> Polaris;
+	Data_or_Calculate -> Castor;
+	Data_or_Calculate -> Serius;
+	Data_or_Calculate -> Vega;
+	Store -> Data_or_Calculate
+
+	Calculate [shape=parallelogram]
+	Data_or_Calculate -> Calculate [style=bold]
+	Calculate -> Coordinates
+
+
+	{rank=source; Coordinates Calibration Information;}
+//	{rank=max; Calculate TimeStamp}
+	{rank=max; Store Calculate TimeStamp PointtoStar }
+//	{rank=sink; Data_or_Calculate }
+
+}

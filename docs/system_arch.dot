@@ -32,6 +32,6 @@ digraph {
 	"server.py" ->"Client.py" [taillabel="asyncio", label = "network", headlabel = "asyncio" ]
 	"Stelcom.py"-> "Stellarium"[taillabel = "post", arrowhead = diamond]
 	"Stellarium" [shape=arrow];
-	rank = same; "server.py"; "Client.py";
+	rank = same; "server.py" ; "Client.py";
 
 }

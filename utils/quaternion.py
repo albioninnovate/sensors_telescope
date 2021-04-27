@@ -1,5 +1,4 @@
 import numpy as np
-import math as m
 
 """
 ref https://stackoverflow.com/questions/56207448/efficient-quaternions-to-euler-transformation

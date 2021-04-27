@@ -3,8 +3,9 @@
 
 
 
-import serial
 import json
+
+import serial
 
 """
     For modifications and text not covered by other licences:

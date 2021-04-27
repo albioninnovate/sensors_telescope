@@ -1,5 +1,3 @@
-import pprint
-
 """
 Takes as input a nested dictionary of the form below
 and returns a flat dictionary.  The keys are appended

@@ -26,9 +26,10 @@
 
 
 import time
+
+import adafruit_character_lcd.character_lcd as characterlcd
 import board
 import digitalio
-import adafruit_character_lcd.character_lcd as characterlcd
 
 # Modify this if you have a different sized character LCD
 lcd_columns = 16

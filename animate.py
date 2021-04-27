@@ -1,13 +1,12 @@
 # python_live_plot.py
 
 from itertools import count
+
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+
 import client
 from utils import quaternion
-import csv
-
-import logging
 
 """
     For modifications and text not covered by other licences:

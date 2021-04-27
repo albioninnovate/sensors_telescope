@@ -18,10 +18,12 @@
 
 """
 
+import math
+
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+
 import client
-import math
 
 
 def get_data():
@@ -39,11 +41,10 @@ Sys_cal = []
 
 
 # noinspection PyPep8Naming
-def animate():
+def animate(i):
     try:
         data = get_data()
-        e_az_new = float(data['X'])
-        e_alt_new = float(data['Z'])
+
         # The plot will use the calibration value as the vector length in the polar plot.
         # In the circuitpython version of pico_svr.py does not return the calibration value.
 
@@ -53,6 +54,9 @@ def animate():
             Sys_cal_new = float(data['Sys_cal'])
     except:
         print('data not received')
+
+    e_az_new = float(data['X'])
+    e_alt_new = float(data['Z'])
 
     e_az_new = math.radians(e_az_new) + 1
     e_alt_new = math.radians(e_alt_new)

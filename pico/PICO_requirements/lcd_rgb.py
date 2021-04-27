@@ -4,9 +4,10 @@
 
 """Simple test for I2C RGB character LCD shield kit"""
 import time
+
+import adafruit_character_lcd.character_lcd_rgb_i2c as character_lcd
 import board
 import busio
-import adafruit_character_lcd.character_lcd_rgb_i2c as character_lcd
 
 # Modify this if you have a different sized Character LCD
 lcd_columns = 16

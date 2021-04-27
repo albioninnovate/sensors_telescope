@@ -1,8 +1,9 @@
 #!/usr/bin/python
 
-import serial
 import json
 import logging
+
+import serial
 
 """
     For modifications and text not covered by other licences:

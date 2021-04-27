@@ -1,12 +1,11 @@
 # python_live_plot.py
 
-from itertools import count
+import math
+
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+
 import client
-from utils import quaternion
-import csv
-import math
 
 """
 

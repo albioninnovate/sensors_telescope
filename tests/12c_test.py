@@ -1,6 +1,7 @@
+import adafruit_bno055
 import board
 import busio
-import adafruit_bno055
+
 i2c = busio.I2C(board.SCL, board.SDA)
 
 print('i2c :', i2c)

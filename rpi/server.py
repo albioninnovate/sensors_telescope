@@ -24,9 +24,9 @@
 
 import asyncio
 import configparser
+
 # import ard_ser
 import pico_svr
-import socket
 
 # TODO set this to run when the pi boots
 #
