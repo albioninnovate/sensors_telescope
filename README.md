@@ -212,3 +212,35 @@ the host name can be used if that matches the IP address. In the case of two net
 ##references
 Character LCD
 https://circuitpython.readthedocs.io/projects/charlcd/en/latest/
+
+
+
+
+# Real Time Clock 
+ref: https://learn.adafruit.com/adafruit-pcf8523-real-time-clock/rtc-with-circuitpython
+
+to run on PICO 
+
+requirements: 
+
+    adafruit_bus_device folder
+    adafruit_register folder
+    adafruit_pcf8523.mpy
+
+to Set the time: 
+``` 
+if False:   # change to True if you want to write the time!
+    #                     year, mon, date, hour, min, sec, wday, yday, isdst
+    t = time.struct_time((2017,  10,   29,   15,  14,  15,    0,   -1,    -1))
+    # you must set year, mon, date, hour, min, sec and weekday
+    # yearday is not supported, isdst can be set but we don't do anything with it at this time
+
+```
+
+Change the False to True in the first line, and update the time.struct_time to have the current time starting from year to weekday. The last two entries can stay at -1
+
+Note the part where the program says it is Setting time to:
+
+Now you can go back and change the if True to if False and save, so you don't re-set the RTC again.
+
+
