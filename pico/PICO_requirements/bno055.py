@@ -1,11 +1,12 @@
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
-import adafruit_bno055
+
+import time
 import board
 
 #for the bno055
 import busio
-
+import adafruit_bno055
 
 #fr the LCD
 import lcd_rgb
