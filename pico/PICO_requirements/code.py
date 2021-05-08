@@ -1,121 +1,34 @@
-# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
-# SPDX-License-Identifier: MIT
-
+import busio
+import adafruit_pcf8523
 import time
 import board
 
-#for the bno055
-import busio
-import adafruit_bno055
-
-#fr the LCD
-import lcd_rgb
-
 
 # Use these lines for I2C
-bno_SDA = board.GP18
-bno_SCL = board.GP19
+SDA = board.GP14
+SCL = board.GP15
 
-i2c = busio.I2C(bno_SCL,bno_SDA)
+#myI2C = busio.I2C(board.SCL, board.SDA)
+myI2C = busio.I2C(SCL, SDA)
+rtc = adafruit_pcf8523.PCF8523(myI2C)
 
-sensor = adafruit_bno055.BNO055_I2C(i2c)
+days = ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
 
-# User these lines for UART
-# uart = busio.UART(board.TX, board.RX)
-# sensor = adafruit_bno055.BNO055_UART(uart)
+if False:   # change to True if you want to write the time!
+    #                     year, mon, date, hour, min, sec, wday, yday, isdst
+    t = time.struct_time((2017,  10,   29,   15,  14,  15,    0,   -1,    -1))
+    # you must set year, mon, date, hour, min, sec and weekday
+    # yearday is not supported, isdst can be set but we don't do anything with it at this time
 
-last_val = 0xFFFF
+    print("Setting time to:", t)     # uncomment for debugging
+    rtc.datetime = t
+    print()
 
-def temperature():
-    global last_val  # pylint: disable=global-statement
-    result = sensor.temperature
-    if abs(result - last_val) == 128:
-        result = sensor.temperature
-        if abs(result - last_val) == 128:
-            return 0b00111111 & result
-    last_val = result
-    return result
+while True:
+    t = rtc.datetime
+    #print(t)     # uncomment for debugging
 
-def decdeg2dms(dd):
-    mnt,sec = divmod(dd*3600,60)
-    deg,mnt = divmod(mnt,60)
-    return deg,mnt,sec
+    print("The date is %s %d/%d/%d" % (days[t.tm_wday], t.tm_mday, t.tm_mon, t.tm_year))
+    print("The time is %d:%02d:%02d" % (t.tm_hour, t.tm_min, t.tm_sec))
 
-def average(sensor, n=10):
-    cnt=1
-    az_list = []
-    alt_list = []
-
-    while cnt <= n:
-        az_list.append(sensor.euler[0])
-        alt_list.append(sensor.euler[2])
-        cnt +=1
-    az_ave  = sum(az_list)/n
-    alt_ave = sum(alt_list)/n
-    return az_ave, alt_ave
-
-def serial_out(sensor):
-
-   # x = az_correct(sensor)
-
-    print('X:',sensor.euler[0], '  Y:',sensor.euler[1], '  Z:',sensor.euler[2])
- #   print('X:',x, '  Y:',sensor.euler[1], '  Z:',sensor.euler[2])
-
-def to_dms_str(az,alt):
-    m = "' "
-    s = '" '
-
-    az_dms = decdeg2dms(az)
-    az_str =  str(round(az_dms[0]))+" "+str(round(az_dms[1]))+m+str(az_dms[2])+s
-
-    alt_dms  = decdeg2dms(alt)
-    alt_str =  str(round(alt_dms[0]))+" "+str(round(alt_dms[1]))+m+str(round(alt_dms[2],1))+s
-
-    return az_str , alt_str
-
-def az_correct(sensor):
-    if sensor.euler[0] <= 180:
-        x = sensor.euler[0] + 180
-    else:
-        x = sensor.euler[0] -180
-    return x
-
-
-if __name__ == "__main__":
-    while True:
-
-#    print("Temperature: {} degrees C".format(sensor.temperature))
-#    """
-#    print(
-#        "Temperature: {} degrees C".format(temperature())
-#    )  # Uncomment if using a Raspberry Pi
-#    """
-#    print("Accelerometer (m/s^2): {}".format(sensor.acceleration))
-#    print("Magnetometer (microteslas): {}".format(sensor.magnetic))
-#    print("Gyroscope (rad/sec): {}".format(sensor.gyro))
-#    print("Euler angle: {}".format(sensor.euler))
-#    print("Quaternion: {}".format(sensor.quaternion))
-#    print("Linear acceleration (m/s^2): {}".format(sensor.linear_acceleration))
-#    print("Gravity (m/s^2): {}".format(sensor.gravity))
-#    print()
-
-    #send the data over the serial (USB) port
-        serial_out(sensor)
-
-
-    # average the values before displaying
-        az , alt = average(sensor)
-        #print(az,alt)
-
-    #az = str(sensor.euler[0])
-    #alt = str(sensor.euler[1])
-    #lcd.message =az+nl+alt
-
-#change to deg min and sec
-
-        az_str , alt_str = to_dms_str(az,alt)
-        #print(az_str , alt_str)
-
-        nl = "\n"
-
-        lcd_rgb.show(az_str+nl+alt_str)
+    time.sleep(1) # wait a second
