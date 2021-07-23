@@ -24,7 +24,7 @@ crontab -e
 ```
 
 
-pllece the follow text at the bottom of tht file
+Place the following text at the bottom of the file
 
 ```
 @reboot sleep 30;/usr/bin/python3 /home/pi/code/sensors_triscope/rpi/server.py
