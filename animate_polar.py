@@ -56,9 +56,12 @@ def animate(i):
         print('data not received')
 
     e_az_new = float(data['X'])
-    e_alt_new = float(data['Z'])
+   # e_alt_new = float(data['Z'])
 
-    e_az_new = math.radians(e_az_new) + 1
+    #if sensor is 'reverse mounted'
+    e_alt_new = float(data['Z'])  * -1
+
+    e_az_new = math.radians(e_az_new)
     e_alt_new = math.radians(e_alt_new)
 
     # Add the new point to the list

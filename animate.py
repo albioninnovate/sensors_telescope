@@ -104,6 +104,9 @@ def animate():
 
     plt.cla()
 
+    #if sensor is 'reverse' mounted
+    q_alt = q_alt * -1
+
     axs[0].plot(x_values, q_az, '-g', linewidth=1)
     axs[0].plot(x_values, e_az, '--c')
     plt.ylabel('Az')

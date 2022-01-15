@@ -48,7 +48,7 @@ def animate():
           data['Sys_cal']
           )
 
-    e_az_new = math.radians(e_az_new)
+    e_az_new = math.radians(e_az_new) - 3.14
     e_alt_new = math.radians(e_alt_new) * -1
 
     # Add the new point to the list

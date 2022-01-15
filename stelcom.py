@@ -95,7 +95,12 @@ if __name__ == '__main__':
         az = float(received['X'])
         alt = float(received['Z'])
 
-        az_rad = - math.radians(az) - math.pi
+        # if sensor is 'reverse' mounted
+        alt = float(received['Z'])  * -1
+
+        #az_rad = - math.radians(az) - math.pi
+#        az_rad = - math.radians(az)
+        az_rad = - (math.radians(az) ) -math.pi
         alt_rad = math.radians(alt)
 
         print("Az/Alt : ", az_rad, ' / ', alt_rad)
@@ -103,5 +108,5 @@ if __name__ == '__main__':
         x = 0
         while x <= 1:
             send_altaz(az_rad, alt_rad)
-            send_fov(40)
+#            send_fov(40)
             x += 1
