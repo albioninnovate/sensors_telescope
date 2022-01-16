@@ -79,13 +79,15 @@ def demo():
     lcd.clear()
 
 def show(msg='msg'):
+    i2c.try_lock()
     lcd.color = [100, 0, 0]
     lcd.message = msg
+    i2c.unlock()
 
 def clear_screen():
     lcd.clear()
 
 
 if __name__ == "__main__":
-    #demo()
+    demo()
     show()
