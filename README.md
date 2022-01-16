@@ -139,8 +139,13 @@ In development and testing a Rpi 3 running a fresh installation of Buster was us
 
 Running the server has several requirements.
 
+
+
 * Start on boot so that all that is required in the field is power on. 
 * Be accessible via fixed IP or hostname from the laptop
+``` 
+triscopepi.local
+```
 * Robustly find the serial port of the PICO/Arduino 
 
 ## Start on boot
