@@ -14,8 +14,8 @@ import lcd_rgb
 
 
     # Use these lines for I2C
-bno_SDA = board.GP16
-bno_SCL = board.GP17
+bno_SDA = board.GP18
+bno_SCL = board.GP19
 
 i2c = busio.I2C(bno_SCL,bno_SDA)
 
@@ -104,7 +104,8 @@ if __name__ == "__main__":
 
 
     # average the values before displaying
-        az , alt = average()
+        az , alt = average(sensor)
+       # print(az,alt)
 
 
     #az = str(sensor.euler[0])
@@ -112,14 +113,15 @@ if __name__ == "__main__":
     #lcd.message =az+nl+alt
 
 #change to deg min and sec
+        print(az,alt)
+        az_str , alt_str = to_dms_str(az,alt)
 
-    az_str , alt_str = to_dms_str(az,alt)
 
-
-    nl = "\n"
+        nl = "\n"
 #    lcd.clear()
 
 #    lcd.message =az_str+nl+alt_str
-
+        print(az_str+nl+alt_str)
     #lcd_rgb.clear_screen()
-    lcd_rgb.show(az_str+nl+alt_str)
+        lcd_rgb.show(az_str+nl+alt_str)
+        print(az_str+nl+alt_str)

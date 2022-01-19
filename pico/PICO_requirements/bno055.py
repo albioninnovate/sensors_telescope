@@ -6,17 +6,21 @@ import board
 
 #for the bno055
 import busio
+#import bitbangio
 import adafruit_bno055
 
 #fr the LCD
 import lcd_rgb
 
 
-# Use these lines for I2C
-bno_SDA = board.GP16
-bno_SCL = board.GP17
+    # Use these lines for I2C
+bno_SDA = board.GP18
+bno_SCL = board.GP19
 
 i2c = busio.I2C(bno_SCL,bno_SDA)
+
+
+##i2c = bitbangio.I2C(bno_SCL, bno_SDA)
 
 sensor = adafruit_bno055.BNO055_I2C(i2c)
 
@@ -72,6 +76,7 @@ def to_dms_str(az,alt):
     return az_str , alt_str
 
 if __name__ == "__main__":
+
     while True:
 
 #    print("Temperature: {} degrees C".format(sensor.temperature))
@@ -90,11 +95,17 @@ if __name__ == "__main__":
 #    print()
 
     #send the data over the serial (USB) port
+        #i2c.try_lock()
         serial_out(sensor)
+        #i2c.unlock()
+        #i2c.deinit()
+
+
 
 
     # average the values before displaying
-        az , alt = average()
+        az , alt = average(sensor)
+       # print(az,alt)
 
 
     #az = str(sensor.euler[0])
@@ -113,4 +124,4 @@ if __name__ == "__main__":
 
     #lcd_rgb.clear_screen()
     lcd_rgb.show(az_str+nl+alt_str)
-
+    print(az_str+nl+alt_str)
