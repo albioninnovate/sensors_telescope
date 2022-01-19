@@ -49,7 +49,26 @@ def get_status(propId=-2, actionId=-2, verbose=False):
         print("Is Stellarium running with the remote control plugin?")
 
 
-# https://stellarium.org/doc/head/remoteControlApi.html
+"""
+ref https://stellarium.org/doc/head/remoteControlApi.html
+
+Launch Stellarium Application 
+go to 
+	1. Configuration Menu (F2)
+	2. plug-in
+Select Remote Control plug-in
+	Options - launch at startup
+
+Restart Stellarium Application to load plug-in
+
+Return to the Remote Control plug-in
+		Click the Configure button 
+		Check the Server enabled box
+				Returns: listening on 127.0.1.1
+		Confirm: Port number: 8096
+		Check the Enable automatically at start up box
+		Save settings 
+"""
 
 def send_altaz(_az=0, _alt=0):
     """
