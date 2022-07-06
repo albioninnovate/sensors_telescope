@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+box OTA
+note over BNO055, PICO #lightgray : I2C
+BNO055 -> PICO: Eular Angle Data
+PICO -> LCD : Alt/Az
+end box
+
+
+box Stand #lightblue
+note over PICO, Rpi #lightgray: USB cable
+PICO --> Rpi  : Serial Print
+end box
+
+
+box Computer
+note over Rpi ,"client.py" #lightgray: IP Network
+note over Rpi: "triscopepi.local"
+
+
+"stelcom.py" --> "client.py" : "client.main()"
+activate "client.py"
+"animate.py" --> "client.py" : "client.main()"
+
+"client.py" --> "Rpi" : asyncio request
+Rpi -->"client.py" : asyncio response
+
+
+"client.py" --> "stelcom.py" : Euler[x,y,z,r]
+"client.py" --> "animate.py" : Eular[x,y,z,r]
+deactivate "client.py"
+
+box Pointer
+PICO_pointer --> "Rpi" : asyncio request
+
+@enduml

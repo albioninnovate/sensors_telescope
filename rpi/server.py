@@ -59,29 +59,16 @@ async def handle_echo(reader, writer):
 
 
 async def main():
-
 #    server = await asyncio.start_server(
 #        handle_echo, '169.254.162.167', 8888)
 
     server = await asyncio.start_server(
         handle_echo, 'triscopepi.local', 8888)
 
-    # TODO change the IP address to host name
-
-    #    hostname = socket.gethostname()
-    #    print(hostname)
-    #    ipaddr = socket.gethostbyname(hostname+'.local')
-    # ipaddr = socket.gethostbyname(hostname)
-    #    print(ipaddr)
-
-    # server = await asyncio.start_server(
-    #    handle_echo, ipaddr, 8888)
-
     addr = server.sockets[0].getsockname()
     print('Serving on ', addr)
 
     async with server:
         await server.serve_forever()
-
 
 asyncio.run(main())
