@@ -1,0 +1,8 @@
+digraph G {
+
+Select -> Cal_mode
+
+Polaris -> "Alt Az time"
+
+
+}

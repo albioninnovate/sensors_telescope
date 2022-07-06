@@ -32,7 +32,7 @@ When the Euler angles are sent Stellarium they must first be inverted by multipl
 
 ## Python Choice 
 
-Python 3.8 is used in order to access asyncio functions.
+Python => 3.8 is used in order to access asyncio functions.
 
 An installation was created here:
 ```
@@ -128,6 +128,8 @@ Adafruit RGB Negative 16x2 LCD+Keypad Kit for Raspberry Pi (ref: https://www.ada
 * pull up resistors needed, 5v logic 
 
 
+Character LCD
+https://circuitpython.readthedocs.io/projects/charlcd/en/latest/
 
 
 
@@ -139,8 +141,13 @@ In development and testing a Rpi 3 running a fresh installation of Buster was us
 
 Running the server has several requirements.
 
+
+
 * Start on boot so that all that is required in the field is power on. 
 * Be accessible via fixed IP or hostname from the laptop
+``` 
+triscopepi.local
+```
 * Robustly find the serial port of the PICO/Arduino 
 
 ## Start on boot
@@ -208,10 +215,29 @@ in the line:
 the host name can be used if that matches the IP address. In the case of two networks being active (Ethernet and WI-FI) the Rpi may have two addresses.  The connection can be forced over the direct link ether net byt switching off the WI-FI and making a call to the server via the host name.  After this is done the Wi-Fi can be switched back on with the host name remaining associated  with the ethernet connection   
 
 
+# Stellarium Set up
 
-##references
-Character LCD
-https://circuitpython.readthedocs.io/projects/charlcd/en/latest/
+ref https://stellarium.org/doc/head/remoteControlApi.html
+
+Launch Stellarium Application 
+
+Go to 	
+1. Configuration Menu (F2)
+2. Select the Plug-ins icon (top of dialogue box)
+3. Select Remote Control plug-in (left of dialogue box)
+4. Check box - launch at startup
+
+Restart Stellarium Application to load plug-in
+
+Return to the Remote Control plug-in
+
+1. Click the Configure button
+2. Check box: the Server enabled box 
+   1. Returns: listening on 127.0.1.1
+3. Confirm: Port number: 8096
+4. Check box: Enable automatically at start up 
+5. Save settings
+
 
 
 
