@@ -145,6 +145,8 @@ Running the server has several requirements.
 
 * Start on boot so that all that is required in the field is power on. 
 * Be accessible via fixed IP or hostname from the laptop
+* the host name needs to match in both the server and the client.  The host name should match the server, e.g. triscopepi.local or devpi.local.
+* TODO add the host name to the configuration file so thi can be changed in just one place.
 ``` 
 triscopepi.local
 ```
@@ -171,13 +173,16 @@ A python version later than 3.7 be used so that asyncio is available.  A sleep o
 
 the sleep 30, allow time for the network connection and IP address to be established.  
 
+There is an alternative approach for launching the server at startup, Systemd.  NOTE, the following approach has not always 
+worked, while the cron approach has been reliable. 
+
 ---
 see: 
     rpi/README_server.md
 ---
 Setting server to run on RaspberryPi boot:
     
-Create aa Unit file 
+Create a Unit file 
 ```
 sudo nano /lib/systemd/system/triscope_server.service
 ````

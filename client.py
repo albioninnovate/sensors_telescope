@@ -50,8 +50,10 @@ def stat_config():
 async def tcp_echo_client(message):
     # ip_addr = config['ADDRESS']['ip_addr']
 
-    #reader, writer = await asyncio.open_connection('169.254.162.167', 8888)
-    reader, writer = await asyncio.open_connection('triscopepi.local', 8888)
+    # reader, writer = await asyncio.open_connection('169.254.162.167', 8888)
+    # reader, writer = await asyncio.open_connection('triscopepi.local', 8888)
+
+    reader, writer = await asyncio.open_connection('devpi.local', 8888)
 
     writer.write(message.encode())
 
@@ -76,7 +78,7 @@ async def tcp_echo_client(message):
 def main():
     stat_config()
     received = asyncio.run(tcp_echo_client('data pls, Thk you'))
-    # print('received by client')
+    print('received by client')
     return received
 
 

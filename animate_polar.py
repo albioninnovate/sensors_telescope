@@ -19,18 +19,24 @@
 """
 
 import math
+import time
 
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-import client
+#import client
+import client_pico_bno
 
 
 def get_data():
     """
     :return:
     """
-    received = client.main()
+   # received = client.main()
+    received = client_pico_bno.main()
+
+    #time.sleep(.2)
+    print(received)
 
     return received
 
@@ -45,6 +51,7 @@ def animate(i):
     try:
         data = get_data()
 
+
         # The plot will use the calibration value as the vector length in the polar plot.
         # In the circuitpython version of pico_svr.py does not return the calibration value.
 
@@ -55,11 +62,13 @@ def animate(i):
     except:
         print('data not received')
 
-    e_az_new = float(data['X'])
+    #e_az_new = float(data['X'])
+    e_az_new = float(data[0])
    # e_alt_new = float(data['Z'])
 
     #if sensor is 'reverse mounted'
-    e_alt_new = float(data['Z'])  * -1
+    #e_alt_new = float(data['Z'])  * -1
+    e_alt_new = float(data[2]) * -1
 
     e_az_new = math.radians(e_az_new)
     e_alt_new = math.radians(e_alt_new)
