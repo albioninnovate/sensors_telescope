@@ -2,13 +2,14 @@ import socket
 import time
 
 def open_port():
-    #picoIP = '192.168.1.14'
-    picoIP = '10.0.254.252'
+    picoIP = '192.168.1.23'
+    #picoIP = '10.0.254.252'
 
     picoPort = 35492
 
     s = socket.socket()
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
 
     s.connect((picoIP, picoPort))
     #print('client socket established')
@@ -28,7 +29,6 @@ def receive(s):
         data =[]
         for datum in payload:
             data.append(float(datum))
-        #print(data[0], data[2])
 
     except Exception as e:
         print(e)

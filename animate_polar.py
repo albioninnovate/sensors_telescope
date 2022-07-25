@@ -79,22 +79,23 @@ def animate(i):
     Sys_cal.append(Sys_cal_new)
 
     # Take the last few points to plot
-    N = 5
+    N = 3
     az = e_az[-N:]
     alt = e_alt[-N:]
     S = Sys_cal[-N:]
 
     axs[0].set_rmax(3)
+
     axs[0].set_rticks([1, 2, 3])
 
     axs[0].set_facecolor(plt.cm.gray(.95))
     axs[0].grid(True)
 
-    axs[1].set_rticks([2])
+    axs[1].set_rticks([0])
     axs[1].set_facecolor(plt.cm.gray(.95))
     axs[1].grid(True)
 
-    # Clear the old points from the plot
+    # Clear the old points frcom the plot
     axs[0].cla()
     axs[1].cla()
 
@@ -107,6 +108,7 @@ def animate(i):
 
     axs[0].plot(az, S, 'go')
     axs[1].plot(alt, S, 'ro')
+
 
     axs[0].text(0, 0,
                 round(math.degrees(e_az_new), 2),

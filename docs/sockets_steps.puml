@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box OTA
+note over BNO055, PICO #lightgray : I2C
+BNO055 -> PICO: Eular Angle Data
+PICO -> LCD : print: Alt/Az
+end box
+
+
+box Computer #lightblue
+note over PICO, "client.py" #lightgray: IP/WIFI Network
+note over "client.py"  : "triscopepi.local"
+"client.py" <--> PICO : socket send/receive
+
+
+"stelcom.py" --> "client.py" : call: "client.main()"
+activate "client.py"
+"animate.py" --> "client.py" : call: "client.main()"
+
+
+"client.py" --> "stelcom.py" : return: Euler[x,y,z,r]
+"client.py" --> "animate.py" : return: Eular[x,y,z,r]
+deactivate "client.py"
+end box
+
+
+
+box Pointer #darkgrey
+note over PICO, PICO_pointer #lightgray: IP/WIFI Network
+'note over PICO, PICO_pointer #lightgray: WIFI Network
+PICO_pointer <--> PICO : socket send/receive
+
+@enduml

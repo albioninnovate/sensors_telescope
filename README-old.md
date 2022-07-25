@@ -22,10 +22,6 @@ The initial strategy was to connect the BNO055 to a Raspberry Pi via I2C.  Altho
 
 A second strategy it was much more successful. This was using an I2C connection via an Arduino and a USB connection between the Arduino and a Raspberry Pi.  The data return was very steady.   The demo Arduino scripts were more than sufficient to return the heading, pitch and yaw (azimuth, altitude and tilt) along with some data quality indicators. 
 
-
-
-
-
 ## Data choice 
 The BNO055 outputs several types of direct measurements (Mag, Gyro, Acc, etc) and two sets of derived information, Euler Angles and Quaternions.  A quick review of literature suggests that Euler Angles can be problematic, and it is best to use quaternions in any data manipulations only converting to Euler angels in the last steps. 
 This does not see to hold for the BNO055.  Initially data was erratic prompting a strategy of averaging the output.  The output is received in multi layer dictionary structures, so a utility was written to flatten the dictionary and average them (utils/flatten_dict.py).  Another utility was written to convert quaternions to Euler angles (utils/quaternion.py). 
@@ -33,21 +29,6 @@ This does not see to hold for the BNO055.  Initially data was erratic prompting 
 The Euler angles output it from the sensor seem to be quite stable and correspond well with the orientation of the chip.  the decision was made to use the output from the chip directly ignoring the quaternions for now. It is worth investigating the processing done on the microprocessor of the BNO055 there appears to be some smoothing in the output data evidenced by its stability. 
 
 When the Euler angles are sent Stellarium they must first be inverted by multiplying by -1 and then converting into radians 
-
-## Micropython 
-
-### Pico Firmware
-https://micropython.org/download/rp2-pico-w/
-
-If the board needs to be reset 
-https://github.com/polhenarejos/pico-nuke
-
-
-### Reference 
-https://docs.micropython.org/en/latest/rp2/quickref.html
-
-see this for gettingon line
-<https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf>
 
 ## Python Choice 
 

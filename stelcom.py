@@ -23,9 +23,8 @@
 
 import math
 import pprint
-
 import requests
-
+import client_pico_bno
 import client
 
 
@@ -108,21 +107,25 @@ if __name__ == '__main__':
     # print('J Day :', s['time']['jday'])
 
     while True:
-        received = client.main()
+       # received = client.main()
+        received = client_pico_bno.main()
         # print('Euler angles : ', received['Euler angle'])
 
-        az = float(received['X'])
-        alt = float(received['Z'])
+        # az = float(received['X'])
+        # alt = float(received['Z'])
+
+        az = float(received[0])
+    #    alt = float(received[2])
 
         # if sensor is 'reverse' mounted
-        alt = float(received['Z'])  * -1
+        alt = float(received[2])  * -1
 
         #az_rad = - math.radians(az) - math.pi
 #        az_rad = - math.radians(az)
         az_rad = - (math.radians(az) ) -math.pi
         alt_rad = math.radians(alt)
 
-        print("Az/Alt : ", az_rad, ' / ', alt_rad)
+       # print("Az/Alt : ", az_rad, ' / ', alt_rad)
 
         x = 0
         while x <= 1:

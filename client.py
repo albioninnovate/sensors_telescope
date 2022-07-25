@@ -1,6 +1,5 @@
 #!/home/pi/Python-3.8.5/python
 
-
 """
     For modifications and text not covered by other licences:
 
