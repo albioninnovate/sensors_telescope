@@ -1,25 +1,20 @@
 import socket
-import time
 
 def open_port():
-    picoIP = '192.168.1.23'
-    #picoIP = '10.0.254.252'
+    #picoIP = '192.168.1.23'
+    #picoIP = '10.0.253.239'
+    picoIP = '192.168.4.1'
 
+    # Prot must be the same as on the PICO server/
+    # TODO make the socket e.g. 35492 a paamenter that can be store in secrets of other config. value is needed in client
     picoPort = 35492
 
     s = socket.socket()
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-
     s.connect((picoIP, picoPort))
     #print('client socket established')
     return s
-
-#msg = b'hello'
-
-#while True:
-#s.sendall(msg)
-#print('sent :',msg)
 
 def receive(s):
     try:
