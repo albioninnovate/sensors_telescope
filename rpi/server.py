@@ -64,7 +64,8 @@ async def main():
 #        handle_echo, '169.254.162.167', 8888)
 
     server = await asyncio.start_server(
-        handle_echo, 'triscopepi.local', 8888)
+      #  handle_echo, 'triscopepi.local', 8888)
+        handle_echo, 'devpi.local', 8888)
 
     # TODO change the IP address to host name
 
